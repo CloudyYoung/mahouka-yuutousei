@@ -108,6 +108,7 @@ img{
     padding: 0;
     width: 61.1%;
     height: 100rem;
+    height: 100%;
     background: url("img/kv_character.png") no-repeat center top;
     background-size: contain;
     animation: float-anim 10s cubic-bezier(0.45, 0, 0.55, 1) 0s infinite forwards;
@@ -135,7 +136,8 @@ img{
 
 .logo{
     width: 100%;
-    height: calc(441 / 1432 * 47vw);
+    /* height: calc(441 / 1432 * 47vw); */
+    height: 8rem;
     max-width: 1432px;
     max-height: 441px;
     background: url("img/logo.png") no-repeat center top;
@@ -143,9 +145,12 @@ img{
 }
 
 .onair{
-    margin: 4% auto 0;
+    /* margin: 4% auto 0; */
+    /* display: none; */
+    margin: 1.8rem auto 0;
     width: 76%;
-    height: calc(121 / 1000 * 35vw);
+    /* height: calc(121 / 1000 * 35vw); */
+    height: 2.2rem;
     max-width: 1000px;
     max-height: 121px;
     background: url("img/txt_onair.png") no-repeat center top;
