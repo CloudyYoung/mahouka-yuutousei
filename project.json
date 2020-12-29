@@ -1,4 +1,6 @@
 {
+	"contentrating" : "Everyone",
+	"description" : "魔法科高校の优等生 (The Honour at Magic High School, Mahouka Koukou no Yuutousei, 魔法科高校的优等生)\n\nPlz leave your comments or suggestions! And rate this wallpaper 😉!\n\nMade with creativity and love by 😈\n\n--\n\nCopyright: All images resources are from Mahouka Honour Official Website and Mahouka Official Twitter. Really appreciate their works!\n\nMahouka Honour Official Site: https://mahouka-yuutousei.jp/",
 	"file" : "index.html",
 	"general" : 
 	{
@@ -13,7 +15,12 @@
 			}
 		}
 	},
-	"title" : "mahouka-yuutousei",
-	"type" : "web",
-	"version" : 0
+	"preview" : "preview.jpg",
+	"tags" : [ "Anime" ],
+	"title" : "The Honour at Magic High School, Mahouka Koukou no Yuutousei",
+	"type" : "Web",
+	"version" : 2,
+	"visibility" : "public",
+	"workshopid" : "2340941608",
+	"workshopurl" : "steam://url/CommunityFilePage/2340941608"
 }
