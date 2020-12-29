@@ -1,0 +1,166 @@
+'use strict';
+
+(function () {
+  var $body = $("body"); // 画面,コンテンツサイズ
+
+  var windowWidth = window.innerWidth;
+  var windowHeight = window.innerHeight;
+  var pcFlg = false;
+
+  if (windowWidth > 1000) {
+    pcFlg = true;
+  }
+
+  var updateDOM = function updateDOM() {
+    // 画面サイズ
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+
+    if (windowWidth > 1000) {
+      pcFlg = true;
+    } else {
+      pcFlg = false;
+    }
+  };
+
+  $(window).on('resize', function () {
+    updateDOM();
+  });
+  $(window).on("load", function () {
+    updateDOM();
+    var urlHash = location.hash;
+
+    if (urlHash) {
+      if (urlHash.split("#")[1] == "comment") {
+        openComment();
+      } else {
+        $body.addClass("is-load");
+      }
+    } else {
+      $body.addClass("is-load");
+    }
+  });
+  var $commentMain = $(".m-comment__main");
+  var $commentCloseItem = $(".js-comment-close-item");
+
+  function openComment() {
+    $commentMain.scrollTop(0);
+    $body.addClass("is-open-comment");
+  }
+
+  function closeComment() {
+    $body.removeClass("is-open-comment");
+    $body.addClass("is-load");
+  }
+
+  $commentCloseItem.on("click", function () {
+    closeComment();
+  });
+  var $commentItem = $(".js-comment");
+  $commentItem.on("click", function () {
+    openComment();
+  });
+  var Movie = {
+    player: '',
+    config: {
+      id: '',
+      player: {
+        wrap: '.js-movie',
+        area: 'iframe'
+      },
+      list: {
+        wrap: '.js-player_thumb',
+        thumb: '.js-thumb',
+        control: '.js-movie__controller'
+      },
+      dataType: 'data-movie'
+    },
+    state: {
+      script: false,
+      templateInit: false
+    },
+    controller: function controller() {
+      var _this = this;
+
+      $(this.config.control).on('click', function () {
+        _this.play();
+      });
+    },
+    get: function get(data) {
+      var mute = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      this.config.id = data;
+      this.write(mute);
+    },
+    write: function write(mute) {
+      var _this2 = this;
+
+      // youtube api のYTが定義されるまでループ
+      // 読み込みに差が生じるため
+      if (typeof YT !== 'undefined' && typeof YT.Player !== 'undefined') {
+        this.set(mute);
+      } else {
+        setTimeout(function () {
+          _this2.write(mute);
+        }, 10);
+      }
+    },
+    reset: function reset() {
+      $(this.config.player.wrap).html("<div id=\"".concat(this.config.player.area, "\"></div>"));
+    },
+    set: function set(mute) {
+      var _mute = mute;
+      this.player = new YT.Player(this.config.player.area, {
+        videoId: this.config.id,
+        events: {
+          'onReady': function onReady() {
+            $(Movie.config.player.wrap).addClass('is-loaded');
+
+            if (_mute) {
+              Movie.player.mute();
+            }
+
+            setTimeout(function () {
+              Movie.autoPlay();
+            }, 500);
+          }
+        },
+        playerVars: {
+          rel: 0,
+          loop: 1,
+          playlist: this.config.id,
+          controls: 0,
+          showinfo: 0,
+          disablekb: 1,
+          playsinline: 1,
+          'html5': 1
+        }
+      });
+    },
+    autoPlay: function autoPlay() {
+      this.player.playVideo();
+    },
+    play: function play() {
+      this.player.playVideo();
+    },
+    pause: function pause() {
+      this.player.pauseVideo();
+    }
+  };
+  var TopTrailer = {
+    config: {
+      wrap: '.js-t-trailer',
+      area: '[data-top-movie]'
+    },
+    template: function template(id) {
+      return "<div class=\"p-top__movie-player js-top-trailer\" data-modal=\"youtube:".concat(id, "\"><div class=\"p-top__movie-player-in js-movie\"><div id=\"iframe\"></div></iframe></div></div>");
+    },
+    init: function init() {
+      var _id = $(this.config.area).attr('data-top-movie');
+
+      $(this.config.area).html(this.template(_id));
+      Movie.get(_id, true);
+      $(this.config.wrap).addClass('is-loaded');
+    }
+  };
+  TopTrailer.init();
+})();
