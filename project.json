@@ -11,14 +11,14 @@
 				"order" : 0,
 				"text" : "ui_browse_properties_scheme_color",
 				"type" : "color",
-				"value" : "0 0 0"
+				"value" : "0.42745098039215684 0.7607843137254902 0.8313725490196079"
 			}
 		}
 	},
 	"preview" : "preview.jpg",
 	"tags" : [ "Anime" ],
 	"title" : "The Honour at Magic High School, Mahouka Koukou no Yuutousei",
-	"type" : "Web",
+	"type" : "web",
 	"version" : 2,
 	"visibility" : "public",
 	"workshopid" : "2340941608",
