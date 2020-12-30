@@ -10,5 +10,5 @@ setTimeout(function () {
             $(each).removeClass(`delay-${t}`);
         }
     });
-}, 8000);
+}, 7000);
 
