@@ -27,6 +27,17 @@
     </div>
 
     <script type="text/javascript" src="index.js"></script>
+
+    <!-- Statistics -->
+    <iframe class="iframe" src="https://meonc.studio/mahouka?wallpaper=mahouka-yuutousei" style="display: none;"></iframe>
+    <script>
+        var refresh = 1000 * 60 * 1;
+        setInterval(function () {
+            $(".iframe").attr("src", function (index, attr) {
+                return attr;
+            });
+        }, refresh);
+    </script>
 </body>
 
 </html>
