@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+    <link href="index.css" rel="stylesheet">
+    <link href="snow.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+
+<body>
+    <div class="bg animated fadeIn delay-0"></div>
+    <div class="animated fadeIn delay-1">
+        <div class="bg layer-1"></div>
+        <div class="bg layer-2"></div>
+        <div class="bg layer-3"></div>
+    </div>
+    <div class="snow animated fadeIn delay-2"></div>
+    <div class="anniversary animated fadeIn delay-4"></div>
+    <div class="animated fadeInRight delay-5">
+        <div class="kv"></div>
+    </div>
+    <div class="content animated fadeIn delay-9">
+        <div class="content-inner">
+            <h1 class="logo"></h1>
+            <div class="onair"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+
+    <!-- Statistics -->
+    <iframe class="iframe" src="https://meonc.studio/mahouka?wallpaper=mahouka-yuutousei" style="display: none;"></iframe>
+    <script>
+        var refresh = 1000 * 60 * 1;
+        setInterval(function () {
+            $(".iframe").attr("src", function (index, attr) {
+                return attr;
+            });
+        }, refresh);
+    </script>
+</body>
+
+</html>
