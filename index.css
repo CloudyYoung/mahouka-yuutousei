@@ -60,7 +60,7 @@ body {
 
 .kv .cad-1 {
   background-image: url(img/cad-1.png);
-  background-position: bottom left;
+  background-position: center left;
   left: 0;
   bottom: 0;
   z-index: 1199;
