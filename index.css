@@ -58,6 +58,18 @@ body {
   z-index: 2299;
 }
 
+.kv .cad-1 {
+  background-image: url(img/cad-1.png);
+  background-position: bottom left;
+  left: 0;
+  bottom: 0;
+  z-index: 1199;
+}
+
+.glow {
+  z-index: 999;
+}
+
 .glow * {
   position: absolute;
   height: 110%;
@@ -98,6 +110,7 @@ body {
   background-size: contain;
   height: 20%;
   width: 30%;
-  top: 34%;
-  left: 24%;
+  top: 46%;
+  left: 40%;
+  transform: translate(-50%, -50%);
 }
