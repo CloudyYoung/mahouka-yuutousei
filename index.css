@@ -45,6 +45,7 @@ body {
 .kv .miyuki {
   background-image: url(img/miyuki.png);
   background-position: bottom right;
+  background-origin: bottom right;
   right: 0;
   bottom: 0;
   z-index: 2399;
