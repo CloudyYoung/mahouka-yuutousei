@@ -1,0 +1,59 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: calc(100vh / 140);
+  line-height: 1;
+  font-feature-settings: "palt";
+  background: #fff;
+  color: #000;
+  text-size-adjust: 100%;
+  overflow: hidden;
+}
+
+.kv * {
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.kv .honoka {
+  background-image: url(img/honoka.png);
+  background-position: top right;
+  right: 0;
+  top: 0;
+  z-index: 2199;
+}
+
+.kv .miyuki {
+  background-image: url(img/miyuki.png);
+  background-position: bottom right;
+  right: 0;
+  bottom: 0;
+  z-index: 2399;
+}
+
+.kv .shizuku {
+  background-image: url(img/shizuku.png);
+  background-position: bottom left;
+  left: 0;
+  bottom: 0;
+  z-index: 2299;
+}
