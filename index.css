@@ -276,7 +276,7 @@ body {
 
 @keyframes fadeInShizuku {
   0% {
-    transform: translate(-6%, 6%) rotate(7deg);
+    transform: translate(-6%, 8%) rotate(6deg);
   }
 }
 
