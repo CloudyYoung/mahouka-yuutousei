@@ -32,6 +32,7 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+  transform-origin: center;
 }
 
 .kv .honoka {
@@ -152,6 +153,7 @@ body {
 
 .animated {
   animation-fill-mode: both;
+  --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
 }
 
 .animated.delay-0 {
@@ -194,16 +196,116 @@ body {
   animation-delay: 2s;
 }
 
+.animated.delay-10 {
+  animation-delay: 2.2s;
+}
+
 .animated.fadeIn {
   animation-name: fadeIn;
   animation-duration: 1.4s;
+}
+
+.animated.fadeInMiyuki {
+  animation-name: fadeInMiyuki, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInHonoka {
+  animation-name: fadeInHonoka, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInShizuku {
+  animation-name: fadeInShizuku, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInCAD5 {
+  animation-name: fadeInCAD5, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInCAD4 {
+  animation-name: fadeInCAD4, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInCAD3 {
+  animation-name: fadeInCAD3, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInCAD2 {
+  animation-name: fadeInCAD2, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
+}
+
+.animated.fadeInCAD1 {
+  animation-name: fadeInCAD1, fadeIn;
+  animation-duration: 18s, 0.6s;
+  animation-timing-function: var(--bezier), linear;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
-  100% {
+  80% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeInMiyuki {
+  0% {
+    transform: translate(-14%, 6%) rotate(14deg) scale(1.4);
+  }
+}
+
+@keyframes fadeInHonoka {
+  0% {
+    transform: translate(8%, -8%) rotate(12deg);
+  }
+}
+
+@keyframes fadeInShizuku {
+  0% {
+    transform: translate(-6%, 6%) rotate(7deg);
+  }
+}
+
+@keyframes fadeInCAD5 {
+  0% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes fadeInCAD4 {
+  0% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes fadeInCAD3 {
+  0% {
+    transform: rotate(13deg);
+  }
+}
+
+@keyframes fadeInCAD2 {
+  0% {
+    transform: translate(0%, -10%);
+  }
+}
+
+@keyframes fadeInCAD1 {
+  0% {
+    transform: rotate(8deg);
   }
 }
