@@ -264,7 +264,7 @@ body {
 
 @keyframes fadeInMiyuki {
   0% {
-    transform: translate(-14%, 6%) rotate(14deg) scale(1.4);
+    transform: translate(-12%, 6%) rotate(14deg) scale(1.4);
   }
 }
 
