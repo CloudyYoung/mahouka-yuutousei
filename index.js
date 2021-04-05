@@ -2,6 +2,10 @@
 let width = window.screen.width;
 let height = window.screen.height;
 
+$("audio").each((each) => {
+    each.volume = 20;
+});
+
 $.mouse = function (e) {
     let wr = e.clientX / width;
     let hr = e.clientY / height;
@@ -9,7 +13,7 @@ $.mouse = function (e) {
     let x = e.clientX;
     let y = e.clientY;
 
-    $(".kv").css({"--x": `${x}px`, "--y": `${y}px`});
+    $(".kv").css({ "--x": `${x}px`, "--y": `${y}px` });
 
     console.log(x, y);
 };
