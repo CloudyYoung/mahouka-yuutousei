@@ -45,6 +45,8 @@ body {
   animation-delay: 1s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
+  z-index: -99;
+  will-change: opacity;
 }
 
 @keyframes catch {
@@ -87,6 +89,7 @@ body {
     height: 100%;
     width: 100%;
     transform-origin: center;
+    will-change: transform, opacity, background-position;
   }
 
   .honoka {
@@ -321,17 +324,17 @@ body {
   }
   @keyframes fadeInMiyuki {
     0% {
-      transform: translate(-22rem, 10rem) rotate(14deg) scale(1.4);
+      transform: translate3d(-22rem, 10rem, 0) rotate(14deg) scale(1.4);
     }
   }
   @keyframes fadeInHonoka {
     0% {
-      transform: translate(10rem, -8rem) rotate(10deg) scale(1.2);
+      transform: translate3d(10rem, -8rem, 0) rotate(10deg) scale(1.2);
     }
   }
   @keyframes fadeInShizuku {
     0% {
-      transform: translate(-5rem, 6rem) rotate(6deg) scale(1.1);
+      transform: translate3d(-5rem, 6rem, 0) rotate(6deg) scale(1.1);
     }
   }
   @keyframes fadeInCAD5 {
@@ -351,7 +354,7 @@ body {
   }
   @keyframes fadeInCAD2 {
     0% {
-      transform: translate(0rem, -14rem) scale(1.2);
+      transform: translate3d(0rem, -14rem, 0) scale(1.2);
     }
   }
   @keyframes fadeInCAD1 {
