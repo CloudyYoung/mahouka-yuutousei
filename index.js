@@ -2,8 +2,9 @@
 let width = window.screen.width;
 let height = window.screen.height;
 
-$("audio").each((each) => {
-    each.volume = 20;
+
+$("audio").each((index, each) => {
+    each.volume = 0.03;
 });
 
 $.mouse = function (e) {
