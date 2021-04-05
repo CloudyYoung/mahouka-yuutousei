@@ -173,23 +173,23 @@ body {
 }
 
 .animated.delay-4 {
-  animation-delay: 1.4s;
+  animation-delay: 1.35s;
 }
 
 .animated.delay-5 {
-  animation-delay: 1.5s;
+  animation-delay: 1.4s;
 }
 
 .animated.delay-6 {
-  animation-delay: 1.6s;
+  animation-delay: 1.45s;
 }
 
 .animated.delay-7 {
-  animation-delay: 1.7s;
+  animation-delay: 1.5s;
 }
 
 .animated.delay-8 {
-  animation-delay: 1.8s;
+  animation-delay: 1.55s;
 }
 
 .animated.delay-9 {
@@ -270,13 +270,13 @@ body {
 
 @keyframes fadeInHonoka {
   0% {
-    transform: translate(8%, -8%) rotate(12deg);
+    transform: translate(10%, -8%) rotate(10deg);
   }
 }
 
 @keyframes fadeInShizuku {
   0% {
-    transform: translate(-6%, 8%) rotate(6deg);
+    transform: translate(-5%, 6%) rotate(6deg);
   }
 }
 
