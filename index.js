@@ -9,6 +9,8 @@ $.mouse = function (e) {
     let x = e.clientX;
     let y = e.clientY;
 
+    $(".kv").css({"--x": `${x}px`, "--y": `${y}px`});
+
     console.log(x, y);
 };
 

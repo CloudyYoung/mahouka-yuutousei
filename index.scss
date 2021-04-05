@@ -38,8 +38,8 @@ body {
   }
 
   * {
-    --x: 0;
-    --y: 0;
+    --x: 0px;
+    --y: 0px;
     position: absolute;
     background-size: contain;
     background-position: center;
@@ -59,8 +59,9 @@ body {
 
   .miyuki {
     background-image: url(img/miyuki.png);
-    background-position: bottom right;
     background-origin: bottom right;
+    background-position: bottom right;
+    // background-position: var(--x) var(--y);
     right: 0;
     bottom: 0;
     z-index: 2399;
@@ -216,7 +217,7 @@ body {
   &.fadeIn {
     animation-name: fadeIn;
     animation-duration: 1.4s;
-    animation-function: ease-out;
+    animation-timing-function: ease-out;
   }
   &.fadeInMiyuki {
     animation-name: fadeInMiyuki, fadeIn;
@@ -230,7 +231,7 @@ body {
   }
   &.fadeInShizuku {
     animation-name: fadeInShizuku, fadeIn;
-    animation-duration: 18s, 0.2s;
+    animation-duration: 18s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD5 {
