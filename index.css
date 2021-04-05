@@ -176,7 +176,7 @@ body {
 
 .animated {
   animation-fill-mode: both;
-  --bezier: cubic-bezier(0, 0.99, 0.13, 0.85);
+  --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
 }
 
 .animated.delay-0 {
@@ -231,49 +231,49 @@ body {
 
 .animated.fadeInMiyuki {
   animation-name: fadeInMiyuki, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInHonoka {
   animation-name: fadeInHonoka, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInShizuku {
   animation-name: fadeInShizuku, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInCAD5 {
   animation-name: fadeInCAD5, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInCAD4 {
   animation-name: fadeInCAD4, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInCAD3 {
   animation-name: fadeInCAD3, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInCAD2 {
   animation-name: fadeInCAD2, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), ease-out;
 }
 
 .animated.fadeInCAD1 {
   animation-name: fadeInCAD1, fadeIn;
-  animation-duration: 16s, 0.4s;
+  animation-duration: 18s, 0.4s;
   animation-timing-function: var(--bezier), linear;
 }
 
