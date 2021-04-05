@@ -1,0 +1,16 @@
+
+let width = window.screen.width;
+let height = window.screen.height;
+
+$.mouse = function (e) {
+    let wr = e.clientX / width;
+    let hr = e.clientY / height;
+
+    let x = e.clientX;
+    let y = e.clientY;
+
+    console.log(x, y);
+};
+
+$.mouse({ "clientX": 0, "clientY": 0 });
+$(document).on('mousemove', $.mouse);

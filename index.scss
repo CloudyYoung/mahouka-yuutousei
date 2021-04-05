@@ -38,6 +38,8 @@ body {
   }
 
   * {
+    --x: 0;
+    --y: 0;
     position: absolute;
     background-size: contain;
     background-position: center;
@@ -203,7 +205,7 @@ body {
     animation-delay: 1.5s;
   }
   &.delay-8 {
-    animation-delay: 1.55s;
+    animation-delay: 1.57s;
   }
   &.delay-9 {
     animation-delay: 2s;
@@ -214,52 +216,53 @@ body {
   &.fadeIn {
     animation-name: fadeIn;
     animation-duration: 1.4s;
+    animation-function: ease-out;
   }
   &.fadeInMiyuki {
     animation-name: fadeInMiyuki, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.4s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInHonoka {
     animation-name: fadeInHonoka, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.4s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInShizuku {
     animation-name: fadeInShizuku, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.2s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD5 {
     animation-name: fadeInCAD5, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.4s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD4 {
     animation-name: fadeInCAD4, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.4s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD3 {
     animation-name: fadeInCAD3, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.4s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD2 {
     animation-name: fadeInCAD2, fadeIn;
-    animation-duration: 18s, 0.6s;
-    animation-timing-function: var(--bezier), linear;
+    animation-duration: 18s, 0.4s;
+    animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD1 {
     animation-name: fadeInCAD1, fadeIn;
-    animation-duration: 18s, 0.6s;
+    animation-duration: 18s, 0.4s;
     animation-timing-function: var(--bezier), linear;
   }
   @keyframes fadeIn {
     0% {
       opacity: 0;
     }
-    80% {
+    100% {
       opacity: 1;
     }
   }
