@@ -25,6 +25,17 @@ body {
   overflow: hidden;
 }
 
+.kv.sp {
+  position: absolute;
+  background-image: url(img/kv.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+}
+
 .kv * {
   position: absolute;
   background-size: contain;
@@ -307,5 +318,27 @@ body {
 @keyframes fadeInCAD1 {
   0% {
     transform: rotate(8deg);
+  }
+}
+
+@media screen and (min-aspect-ratio: 7/6) {
+  .kv,
+.logo,
+.glow {
+    display: block;
+  }
+  .kv.sp {
+    display: none;
+  }
+}
+
+@media screen and (max-aspect-ratio: 7/6) {
+  .kv,
+.logo,
+.glow {
+    display: none;
+  }
+  .kv.sp {
+    display: block;
   }
 }
