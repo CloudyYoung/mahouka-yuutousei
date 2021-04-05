@@ -35,23 +35,24 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  height: 24%;
-  width: 24%;
+  height: 22%;
+  width: 22%;
   left: 50%;
   top: 48%;
   transform: translate(-50%, -50%);
   animation-name: catch;
-  animation-duration: 6.6s;
-  animation-delay: 1s;
+  animation-duration: 6.4s;
+  animation-delay: 1.4s;
   animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
   z-index: -99;
-  will-change: opacity;
+  will-change: opacity, transform;
 }
 
 @keyframes catch {
   0% {
     opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
   }
   30% {
     opacity: 1;
@@ -60,6 +61,7 @@ body {
     opacity: 1;
   }
   100% {
+    transform: translate(-50%, -50%) scale(1);
     opacity: 0;
     display: none;
   }
