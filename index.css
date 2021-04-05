@@ -176,7 +176,7 @@ body {
 
 .animated {
   animation-fill-mode: both;
-  --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
+  --bezier: cubic-bezier(0, 0.99, 0.13, 0.85);
 }
 
 .animated.delay-0 {
@@ -288,37 +288,37 @@ body {
 
 @keyframes fadeInMiyuki {
   0% {
-    transform: translate(-12%, 6%) rotate(14deg) scale(1.4);
+    transform: translate(-22%, 10%) rotate(14deg) scale(1.6);
   }
 }
 
 @keyframes fadeInHonoka {
   0% {
-    transform: translate(10%, -8%) rotate(10deg);
+    transform: translate(10%, -8%) rotate(10deg) scale(1.2);
   }
 }
 
 @keyframes fadeInShizuku {
   0% {
-    transform: translate(-5%, 6%) rotate(6deg);
+    transform: translate(-5%, 6%) rotate(6deg) scale(1.1);
   }
 }
 
 @keyframes fadeInCAD5 {
   0% {
-    transform: rotate(30deg);
+    transform: rotate(30deg) scale(1.2);
   }
 }
 
 @keyframes fadeInCAD4 {
   0% {
-    transform: rotate(13deg);
+    transform: rotate(13deg) scale(1.2);
   }
 }
 
 @keyframes fadeInCAD3 {
   0% {
-    transform: rotate(16deg);
+    transform: rotate(16deg) scale(1.3);
   }
 }
 
