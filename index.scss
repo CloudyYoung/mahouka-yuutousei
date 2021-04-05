@@ -26,6 +26,10 @@ body {
 }
 
 .kv {
+  --x: 0px;
+  --y: 0px;
+  --move-rate: 0.02;
+
   &.sp {
     position: absolute;
     background-image: url(img/kv.jpg);
@@ -38,8 +42,6 @@ body {
   }
 
   * {
-    --x: 0px;
-    --y: 0px;
     position: absolute;
     background-size: contain;
     background-position: center;
@@ -50,18 +52,25 @@ body {
   }
 
   .honoka {
+    left: calc(100% * var(--move-rate));
+    top: calc(100% * var(--move-rate));
     background-image: url(img/honoka.png);
     background-position: top right;
+    background-position: calc(var(--x) * var(--move-rate))
+      calc(0% - var(--y) * var(--move-rate));
     right: 0;
     top: 0;
     z-index: 2199;
   }
 
   .miyuki {
+    left: calc(100% * var(--move-rate));
+    top: calc(100% * var(--move-rate));
     background-image: url(img/miyuki.png);
     background-origin: bottom right;
     background-position: bottom right;
-    // background-position: var(--x) var(--y);
+    background-position: calc(100% - var(--x) * var(--move-rate))
+      calc(100% - var(--y) * var(--move-rate));
     right: 0;
     bottom: 0;
     z-index: 2399;
@@ -182,37 +191,37 @@ body {
   --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
 
   &.delay-0 {
-    animation-delay: 1s;
+    animation-delay: 8s;
   }
   &.delay-1 {
-    animation-delay: 1.1s;
+    animation-delay: 8.1s;
   }
   &.delay-2 {
-    animation-delay: 1.2s;
+    animation-delay: 8.2s;
   }
   &.delay-3 {
-    animation-delay: 1.3s;
+    animation-delay: 8.3s;
   }
   &.delay-4 {
-    animation-delay: 1.35s;
+    animation-delay: 8.35s;
   }
   &.delay-5 {
-    animation-delay: 1.4s;
+    animation-delay: 8.4s;
   }
   &.delay-6 {
-    animation-delay: 1.45s;
+    animation-delay: 8.45s;
   }
   &.delay-7 {
-    animation-delay: 1.5s;
+    animation-delay: 8.5s;
   }
   &.delay-8 {
-    animation-delay: 1.57s;
+    animation-delay: 8.57s;
   }
   &.delay-9 {
-    animation-delay: 2s;
+    animation-delay: 9s;
   }
   &.delay-10 {
-    animation-delay: 2.2s;
+    animation-delay: 9.2s;
   }
   &.fadeIn {
     animation-name: fadeIn;
@@ -221,42 +230,42 @@ body {
   }
   &.fadeInMiyuki {
     animation-name: fadeInMiyuki, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInHonoka {
     animation-name: fadeInHonoka, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInShizuku {
     animation-name: fadeInShizuku, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD5 {
     animation-name: fadeInCAD5, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD4 {
     animation-name: fadeInCAD4, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD3 {
     animation-name: fadeInCAD3, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD2 {
     animation-name: fadeInCAD2, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), ease-out;
   }
   &.fadeInCAD1 {
     animation-name: fadeInCAD1, fadeIn;
-    animation-duration: 18s, 0.4s;
+    animation-duration: 16s, 0.4s;
     animation-timing-function: var(--bezier), linear;
   }
   @keyframes fadeIn {
