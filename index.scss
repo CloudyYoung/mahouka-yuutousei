@@ -187,7 +187,7 @@ body {
     background: transparent;
     opacity: 0.66;
     border-radius: 50%;
-    will-change: opacity;
+    will-change: opacity, transform;
   }
 
   .honoka {
