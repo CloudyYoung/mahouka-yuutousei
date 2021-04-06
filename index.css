@@ -344,7 +344,7 @@ body {
 
 @keyframes fadeInMiyuki {
   0% {
-    transform: translate3d(-28rem, 8rem, 0) rotate(24deg) scale(1.46);
+    transform: translate3d(-20rem, 8rem, 0) rotate(24deg) scale(1.42);
   }
 }
 
@@ -386,7 +386,7 @@ body {
 
 @keyframes fadeInCAD1 {
   0% {
-    transform: rotate(20deg) scale(1.16);
+    transform: rotate(16deg) scale(1.2);
   }
 }
 
