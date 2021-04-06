@@ -93,7 +93,7 @@ body {
   width: 100%;
   transform-origin: center;
   transition: all 3s cubic-bezier(0.02, 0.73, 0, 0.92);
-  will-change: transform, opacity, background-position;
+  will-change: transform, opacity, background-position, background-position-x, background-position-y;
 }
 
 .kv .honoka {
@@ -132,40 +132,50 @@ body {
 }
 
 .kv .cad-1 {
+  --move-rate-x: calc(var(--global-move-rate) * 0.8);
+  --move-rate-y: calc(var(--global-move-rate) * 0.8);
   background-image: url(img/cad-1.png);
-  background-position: center left;
-  left: 0;
-  bottom: 0;
+  background-position-x: calc(var(--x) * var(--move-rate-x));
+  background-position-y: calc(42% + var(--y) * var(--move-rate-y));
   z-index: 1199;
 }
 
 .kv .cad-2 {
+  --move-rate-x: calc(var(--global-move-rate) * 0.7);
+  --move-rate-y: calc(var(--global-move-rate) * 0.8);
   background-image: url(img/cad-2.png);
-  background-position: left center;
-  left: 0;
-  top: 0;
+  background-position-y: calc(var(--y) * var(--move-rate-y));
+  left: calc(-100% * var(--move-rate-x));
   z-index: 1199;
 }
 
 .kv .cad-3 {
+  --move-rate-x: calc(var(--global-move-rate) * 0.9);
+  --move-rate-y: calc(var(--global-move-rate) * 0.8);
   background-image: url(img/cad-3.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
+  background-position-x: calc(var(--x) * var(--move-rate-x));
+  background-position-y: calc(var(--y) * var(--move-rate-y));
+  top: calc(-100% * var(--move-rate-y));
   z-index: 1199;
 }
 
 .kv .cad-4 {
+  --move-rate-x: calc(var(--global-move-rate) * 1.2);
+  --move-rate-y: calc(var(--global-move-rate) * 1.2);
   background-image: url(img/cad-4.png);
-  background-position: top center;
+  background-position-x: calc(var(--x) * var(--move-rate-x));
+  background-position-y: calc(var(--y) * var(--move-rate-y));
   left: 0;
   top: 0;
   z-index: 1199;
 }
 
 .kv .cad-5 {
+  --move-rate-x: calc(var(--global-move-rate) * 1);
+  --move-rate-y: calc(var(--global-move-rate) * 1.1);
   background-image: url(img/cad-5.png);
-  background-position: top center;
+  background-position-x: calc(var(--x) * var(--move-rate-x));
+  background-position-y: calc(var(--y) * var(--move-rate-y));
   left: 0;
   top: 0;
   z-index: 1199;
