@@ -38,7 +38,7 @@ body {
   height: 22%;
   width: 22%;
   left: 50%;
-  top: 48%;
+  top: 47%;
   transform: translate(-50%, -50%);
   animation-name: catch;
   animation-duration: 6.4s;
@@ -70,7 +70,7 @@ body {
 .kv {
   --x: 0px;
   --y: 0px;
-  --move-rate: 0.02;
+  --global-move-rate: 0.02;
 
   &.sp {
     position: absolute;
@@ -95,34 +95,36 @@ body {
   }
 
   .honoka {
-    left: calc(100% * var(--move-rate));
-    top: calc(100% * var(--move-rate));
+    --move-rate-x: calc(var(--global-move-rate) * 1.2);
+    --move-rate-y: calc(var(--global-move-rate) * 1.8);
     background-image: url(img/honoka.png);
-    background-position: top right;
-    background-position: calc(var(--x) * var(--move-rate))
-      calc(0% - var(--y) * var(--move-rate));
+    background-origin: top right;
+    background-position-x: calc(var(--x) * var(--move-rate-x));
+    background-position-y: calc(var(--y) * var(--move-rate-y));
     right: 0;
-    top: 0;
+    top: calc(-100% * var(--move-rate-y));
     z-index: 2199;
   }
 
   .miyuki {
-    left: calc(100% * var(--move-rate));
-    top: calc(100% * var(--move-rate));
+    --move-rate-x: calc(var(--global-move-rate) * 1.7);
+    --move-rate-y: calc(var(--global-move-rate) * 1.4);
     background-image: url(img/miyuki.png);
     background-origin: bottom right;
-    background-position: bottom right;
-    background-position: calc(100% - var(--x) * var(--move-rate))
-      calc(100% - var(--y) * var(--move-rate));
-    right: 0;
-    bottom: 0;
+    background-position-x: calc(100% + var(--x) * var(--move-rate-x));
+    background-position-y: calc(100% + var(--y) * var(--move-rate-y));
     z-index: 2399;
   }
 
   .shizuku {
+    --move-rate-x: calc(var(--global-move-rate) * 1.4);
+    --move-rate-y: calc(var(--global-move-rate) * 1.2);
     background-image: url(img/shizuku.png);
-    background-position: bottom left;
-    left: 0;
+    background-origin: bottom left;
+    background-position-x: calc(var(--x) * var(--move-rate-x));
+    background-position-y: calc(100% + var(--y) * var(--move-rate-y));
+    left: calc(-100% * var(--move-rate-x));
+    top: calc(100% * var(--move-rate-y));
     bottom: 0;
     z-index: 2299;
   }
@@ -165,6 +167,22 @@ body {
     left: 0;
     top: 0;
     z-index: 1199;
+  }
+
+  .logo {
+    --move-rate-x: calc(var(--global-move-rate) * 0.1);
+    --move-rate-y: calc(var(--global-move-rate) * 0.1);
+    position: absolute;
+    background-image: url(img/logo.png);
+    background-origin: center;
+    background-position-x: calc(40% + var(--x) * var(--move-rate-x));
+    background-position-y: calc(47% + var(--y) * var(--move-rate-y));
+    background-repeat: no-repeat;
+    background-size: 30% auto;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
   }
 }
 
@@ -214,19 +232,6 @@ body {
       transparent 70%
     );
   }
-}
-
-.logo {
-  position: absolute;
-  background-image: url(img/logo.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 20%;
-  width: 30%;
-  top: 47%;
-  left: 40%;
-  transform: translate(-50%, -50%);
 }
 
 .animated {
@@ -326,42 +331,42 @@ body {
   }
   @keyframes fadeInMiyuki {
     0% {
-      transform: translate3d(-22rem, 10rem, 0) rotate(14deg) scale(1.4);
+      transform: translate3d(-22rem, 10rem, 0) rotate(24deg) scale(1.4);
     }
   }
   @keyframes fadeInHonoka {
     0% {
-      transform: translate3d(10rem, -8rem, 0) rotate(10deg) scale(1.2);
+      transform: translate3d(10rem, -8rem, 0) rotate(20deg) scale(1.24);
     }
   }
   @keyframes fadeInShizuku {
     0% {
-      transform: translate3d(-5rem, 6rem, 0) rotate(6deg) scale(1.1);
+      transform: translate3d(-7rem, 8rem, 0) rotate(12deg) scale(1.2);
     }
   }
   @keyframes fadeInCAD5 {
     0% {
-      transform: rotate(30deg) scale(1.2);
+      transform: rotate(30deg) scale(1.6);
     }
   }
   @keyframes fadeInCAD4 {
     0% {
-      transform: rotate(13deg) scale(1.2);
+      transform: rotate(24deg) scale(1.4);
     }
   }
   @keyframes fadeInCAD3 {
     0% {
-      transform: rotate(16deg) scale(1.3);
+      transform: rotate(28deg) translateY(10%) scale(1.44);
     }
   }
   @keyframes fadeInCAD2 {
     0% {
-      transform: translate3d(0rem, -14rem, 0) scale(1.2);
+      transform: translate3d(0rem, -28rem, 0) scale(1.2);
     }
   }
   @keyframes fadeInCAD1 {
     0% {
-      transform: rotate(8deg) scale(1.1);
+      transform: rotate(20deg) scale(1.1);
     }
   }
 }
