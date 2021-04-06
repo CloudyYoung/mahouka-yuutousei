@@ -54,7 +54,7 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.8);
   }
-  30% {
+  25% {
     opacity: 1;
   }
   80% {
@@ -276,49 +276,49 @@ body {
 .animated.fadeIn {
   animation-name: fadeIn;
   animation-duration: 1.4s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease-in-out;
 }
 
 .animated.fadeInMiyuki {
   animation-name: fadeInMiyuki, fadeIn;
   animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInHonoka {
   animation-name: fadeInHonoka, fadeIn;
   animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInShizuku {
   animation-name: fadeInShizuku, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-duration: 18s, 0.64s;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInCAD5 {
   animation-name: fadeInCAD5, fadeIn;
   animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInCAD4 {
   animation-name: fadeInCAD4, fadeIn;
   animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInCAD3 {
   animation-name: fadeInCAD3, fadeIn;
   animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInCAD2 {
   animation-name: fadeInCAD2, fadeIn;
   animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-out;
+  animation-timing-function: var(--bezier), ease-in-out;
 }
 
 .animated.fadeInCAD1 {
