@@ -4,7 +4,7 @@ let height = window.screen.height;
 
 
 $("audio").each((index, each) => {
-    each.volume = 0.03;
+    each.volume = 0.02;
 });
 
 $.mouse = function (e) {
@@ -21,3 +21,7 @@ $.mouse = function (e) {
 
 $.mouse({ "clientX": 0, "clientY": 0 });
 $(document).on('mousemove', $.mouse);
+
+setTimeout(function () {
+    $(".vocal")[0].play();
+}, 9000);
