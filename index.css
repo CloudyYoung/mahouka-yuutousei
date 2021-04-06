@@ -92,6 +92,7 @@ body {
   height: 100%;
   width: 100%;
   transform-origin: center;
+  transition: all 3s cubic-bezier(0.02, 0.73, 0, 0.92);
   will-change: transform, opacity, background-position;
 }
 
