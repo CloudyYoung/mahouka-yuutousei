@@ -248,22 +248,22 @@ body {
     animation-delay: 8.2s;
   }
   &.delay-13 {
-    animation-delay: 8.3s;
+    animation-delay: 8.25s;
   }
   &.delay-14 {
-    animation-delay: 8.35s;
+    animation-delay: 8.3s;
   }
   &.delay-15 {
-    animation-delay: 8.4s;
+    animation-delay: 8.35s;
   }
   &.delay-16 {
-    animation-delay: 8.45s;
+    animation-delay: 8.4s;
   }
   &.delay-17 {
-    animation-delay: 8.5s;
+    animation-delay: 8.45s;
   }
   &.delay-18 {
-    animation-delay: 8.57s;
+    animation-delay: 8.47s;
   }
   &.delay-19 {
     animation-delay: 9s;
@@ -331,7 +331,7 @@ body {
   }
   @keyframes fadeInMiyuki {
     0% {
-      transform: translate3d(-22rem, 10rem, 0) rotate(24deg) scale(1.4);
+      transform: translate3d(-28rem, 8rem, 0) rotate(24deg) scale(1.46);
     }
   }
   @keyframes fadeInHonoka {
@@ -346,12 +346,12 @@ body {
   }
   @keyframes fadeInCAD5 {
     0% {
-      transform: rotate(30deg) scale(1.6);
+      transform: rotate(24deg) scale(1.6);
     }
   }
   @keyframes fadeInCAD4 {
     0% {
-      transform: rotate(24deg) scale(1.4);
+      transform: rotate(36deg) scale(1.4);
     }
   }
   @keyframes fadeInCAD3 {
@@ -366,7 +366,7 @@ body {
   }
   @keyframes fadeInCAD1 {
     0% {
-      transform: rotate(20deg) scale(1.1);
+      transform: rotate(20deg) scale(1.16);
     }
   }
 }
