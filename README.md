@@ -1,3 +1,3 @@
 # mahouka-yuutousei
  
-![img/maxresdefault.jpg](img/maxresdefault.jpg)
+![img/maxresdefault.jpg](img/kv.jpg)
