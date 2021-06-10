@@ -45,7 +45,7 @@ stage.add(kv_charas_layer, kv_cads_layer);
 let kv_real_width = 3555;
 let kv_real_height = 2000;
 
-let kv_chara_width = width * 1.015;
+let kv_chara_width = width * 1.01;
 let kv_chara_height = kv_real_height * (kv_chara_width / kv_real_width);
 
 let kv_chara_x = (width - kv_chara_width);
@@ -65,17 +65,17 @@ let positions = {
 
 // kv_charas
 let kvs = {
-    // charas
-    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.07, y: kv_chara_height * 0.08, rotate: 12, scale: 1.2, delay: 470 } },
-    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * 0.1, y: kv_chara_height * -0.08, rotate: 20, scale: 1.24, delay: 200 } },
-    "miyuki": { position: positions.BOTTOM_RIGHT, start: { x: kv_chara_width * -0.2, y: kv_chara_height * 0.08, rotate: 24, scale: 1.42, delay: 100 } },
-
     // cads
-    "cad-1": { position: positions.CENTER_LEFT, start: { rotate: 16, scale: 1.2, delay: 450 } },
-    "cad-2": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.28, scale: 1.2, delay: 400 } },
-    "cad-3": { position: positions.TOP_CENTER, start: { y: kv_chara_width * -0.2, rotate: 28, scale: 1.4, delay: 350 } },
-    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 36, scale: 1.4, delay: 300 } },
-    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 24, scale: 1.6, delay: 250 } },
+    "cad-1": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.35, rotate: 12, scale: 1.4, delay: 450 } },
+    "cad-2": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.3, scale: 1.4, delay: 400 } },
+    "cad-3": { position: positions.TOP_CENTER, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 18, scale: 1.4, delay: 350 } },
+    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 7, scale: 1.4, delay: 300 } },
+    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 2, scale: 1.6, delay: 250 } },
+
+    // charas
+    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.06, rotate: 12, scale: 1.2, delay: 470 } },
+    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.2, rotate: 20, scale: 1.44, delay: 200 } },
+    "miyuki": { position: positions.BOTTOM_RIGHT, start: { x: kv_chara_width * -0.34, y: kv_chara_height * -0.5, rotate: 24, scale: 1.62, delay: 100 } },
 };
 
 
@@ -113,8 +113,8 @@ for (let [kv, attr] of Object.entries(kvs)) {
         opacity: 1,
         easing: Konva.Easings.EaseInOut,
     });
-    setTimeout(() => attr.tween.play(), 1000 + (attr.start.delay || 0));
-    setTimeout(() => attr.tween_opacity.play(), 1000 + (attr.start.delay || 0));
+    setTimeout(() => attr.tween.play(), 2000 + (attr.start.delay * 2 || 0));
+    setTimeout(() => attr.tween_opacity.play(), 2000 + (attr.start.delay * 2 || 0));
 }
 
 setTimeout(() => stage.batchDraw(), 500);
