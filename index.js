@@ -99,16 +99,28 @@ for (let [kv, attr] of Object.entries(kvs)) {
 
     attr.tween = new Konva.Tween({
         node: attr.konva,
-        duration: 3,
-        opacity: 1,
+        duration: 18,
         x: attr.position.x,
         y: attr.position.y,
         scaleX: 1,
         scaleY: 1,
         rotation: 0,
-        easing: Konva.Easings.StrongEaseOut,
+        easing: mahouka_bezier,
+    });
+    attr.tween_opacity = new Konva.Tween({
+        node: attr.konva,
+        duration: 0.4,
+        opacity: 1,
+        easing: Konva.Easings.EaseInOut,
     });
     setTimeout(() => attr.tween.play(), 1000 + (attr.start.delay || 0));
+    setTimeout(() => attr.tween_opacity.play(), 1000 + (attr.start.delay || 0));
 }
 
 setTimeout(() => stage.batchDraw(), 500);
+
+
+function mahouka_bezier(t, b, c, d) {
+    let a = bezier(0.01, 0.9, 0, 0.79);
+    return b + a(t / d) / c;
+}
