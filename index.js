@@ -68,13 +68,13 @@ let kvs = {
     "cad-1": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.35, rotate: 12, scale: 1.4, delay: 450 } },
     "cad-2": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.3, scale: 1.4, delay: 400 } },
     "cad-3": { position: positions.TOP_CENTER, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 18, scale: 1.4, delay: 350 } },
-    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 7, scale: 1.4, delay: 300 } },
-    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 2, scale: 1.6, delay: 250 } },
+    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 5, scale: 1.4, delay: 300 } },
+    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 3, scale: 1.4, delay: 250 } },
 
     // charas
-    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.06, rotate: 12, scale: 1.2, delay: 470 } },
-    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.2, rotate: 20, scale: 1.32, delay: 200 } },
-    "miyuki": { position: positions.BOTTOM_RIGHT, start: { x: kv_chara_width * -0.34, y: kv_chara_height * -0.5, rotate: 24, scale: 1.62, delay: 100 } },
+    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.16, y: kv_chara_height * -0.2, rotate: 12, scale: 1.4, delay: 470 } },
+    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.2, rotate: 14, scale: 1.4, delay: 200 } },
+    "miyuki": { position: positions.BOTTOM_RIGHT, start: { x: kv_chara_width * -0.24, y: kv_chara_height * -0.6, rotate: 26, scale: 1.52, delay: 100 } },
 };
 
 
@@ -147,13 +147,13 @@ function mahouka_bezier(t, b, c, d) {
 function start() {
     // kvs start animation
     for (let [kv, attr] of Object.entries(kvs)) {
-        setTimeout(() => attr.tween.play(), 2000 + (attr.start.delay || 0));
-        setTimeout(() => attr.tween_opacity.play(), 2000 + (attr.start.delay || 0));
+        setTimeout(() => attr.tween.play(), 3000 + (attr.start.delay || 0));
+        setTimeout(() => attr.tween_opacity.play(), 3050 + (attr.start.delay || 0));
     }
 
     // Logo
-    setTimeout(() => $(".logo").addClass("animated fadeIn"), 3200);
+    setTimeout(() => $(".logo").addClass("animated fadeIn"), 4200);
 
     // Glow
-    setTimeout(() => $(".glow").addClass("animated fadeInGlow"), 1200);
+    setTimeout(() => $(".glow").addClass("animated fadeInGlow"), 2200);
 }
