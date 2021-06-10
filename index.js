@@ -66,16 +66,16 @@ let positions = {
 // kv_charas
 let kvs = {
     // charas
-    "shizuku": { position: positions.BOTTOM_LEFT },
-    "honoka": { position: positions.TOP_RIGHT },
-    "miyuki": { position: positions.BOTTOM_RIGHT },
+    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.07, y: kv_chara_height * 0.08, rotate: 12, scale: 1.2, delay: 470 } },
+    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * 0.1, y: kv_chara_height * -0.08, rotate: 20, scale: 1.24, delay: 200 } },
+    "miyuki": { position: positions.BOTTOM_RIGHT, start: { x: kv_chara_width * -0.2, y: kv_chara_height * 0.08, rotate: 24, scale: 1.42, delay: 100 } },
 
     // cads
-    "cad-1": { position: positions.CENTER_LEFT },
-    "cad-2": { position: positions.CENTER_LEFT },
-    "cad-3": { position: positions.TOP_CENTER },
-    "cad-4": { position: positions.TOP_CENTER },
-    "cad-5": { position: positions.TOP_CENTER },
+    "cad-1": { position: positions.CENTER_LEFT, start: { rotate: 16, scale: 1.2, delay: 450 } },
+    "cad-2": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.28, scale: 1.2, delay: 400 } },
+    "cad-3": { position: positions.TOP_CENTER, start: { y: kv_chara_width * -0.2, rotate: 28, scale: 1.4, delay: 350 } },
+    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 36, scale: 1.4, delay: 300 } },
+    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 24, scale: 1.6, delay: 250 } },
 };
 
 
@@ -86,13 +86,29 @@ for (let [kv, attr] of Object.entries(kvs)) {
 
     attr.konva = new Konva.Image({
         image: kv_img,
-        x: attr.position.x,
-        y: attr.position.y,
         width: kv_chara_width,
         height: kv_chara_height,
-        opacity: 1
+        opacity: attr.opacity || 0,
+        x: attr.position.x + (attr.start.x || 0),
+        y: attr.position.y + (attr.start.y || 0),
+        scaleX: attr.start.scale || 1,
+        scaleY: attr.start.scale || 1,
+        rotation: attr.start.rotate || 0,
     });
     kv_charas_layer.add(attr.konva);
+
+    attr.tween = new Konva.Tween({
+        node: attr.konva,
+        duration: 3,
+        opacity: 1,
+        x: attr.position.x,
+        y: attr.position.y,
+        scaleX: 1,
+        scaleY: 1,
+        rotation: 0,
+        easing: Konva.Easings.StrongEaseOut,
+    });
+    setTimeout(() => attr.tween.play(), 1000 + (attr.start.delay || 0));
 }
 
 setTimeout(() => stage.batchDraw(), 500);
