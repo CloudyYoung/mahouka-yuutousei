@@ -42,8 +42,8 @@ stage.add(kv_charas_layer, kv_cads_layer);
 
 
 // Variables
-let kv_real_width = 5800;
-let kv_real_height = 3263;
+let kv_real_width = 3555;
+let kv_real_height = 2000;
 
 let kv_chara_width = width * 1.02;
 let kv_chara_height = kv_real_height * (kv_chara_width / kv_real_width);
