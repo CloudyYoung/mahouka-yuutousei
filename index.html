@@ -4,10 +4,11 @@
 <head>
     <link href="index.css" rel="stylesheet">
     <script type="text/javascript" src="jquery.js"></script>
+    <script src="konva.min.js"></script>
 
-    <link rel="preload" as="image" href="img/honoka.png">
-    <link rel="preload" as="image" href="img/shizuku.png">
-    <link rel="preload" as="image" href="img/miyuki.png">
+    <link rel="preload" as="image" href="img/kv_chara_01.png">
+    <link rel="preload" as="image" href="img/kv_chara_02.png">
+    <link rel="preload" as="image" href="img/kv_chara_03.png">
     <link rel="preload" as="image" href="img/cad-1.png">
     <link rel="preload" as="image" href="img/cad-2.png">
     <link rel="preload" as="image" href="img/cad-3.png">
@@ -17,8 +18,8 @@
 </head>
 
 <body>
-    <div class="catch"></div>
-    <div class="kv">
+    <!-- <div class="catch"></div> -->
+    <!-- <div class="kv">
         <div class="miyuki animated fadeInMiyuki delay-11"></div>
         <div class="honoka animated fadeInHonoka delay-12"></div>
         <div class="shizuku animated fadeInShizuku delay-18"></div>
@@ -27,10 +28,12 @@
         <div class="cad-3 animated fadeInCAD3 delay-15"></div>
         <div class="cad-4 animated fadeInCAD4 delay-14"></div>
         <div class="cad-5 animated fadeInCAD5 delay-13"></div>
-        <div class="logo animated fadeIn delay-20"></div>
-    </div>
+    </div> -->
 
-    <div class="kv sp animated fadeIn delay-11"></div>
+    <div class="kv">
+        <div class="logo animated fadeIn"></div>
+    </div>
+    <div class="kv sp animated fadeIn"></div>
 
     <div class="glow animated fadeInGlow">
         <div class="miyuki"></div>
@@ -38,12 +41,14 @@
         <div class="shizuku"></div>
     </div>
 
-    <audio autoplay preload="auto">
+    <div class="konva"></div>
+
+    <!-- <audio autoplay preload="auto">
         <source src="audio/pv1-audio.mp3" type="audio/mpeg">
     </audio>
     <audio class="vocal" preload="auto">
         <source src="audio/pv1-vocal.mp3" type="audio/mpeg">
-    </audio>
+    </audio> -->
 
     <script type="text/javascript" src="index.js"></script>
 
