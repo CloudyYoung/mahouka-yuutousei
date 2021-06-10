@@ -73,7 +73,7 @@ body {
   --global-move-rate: 0.02;
 }
 
-.kv.sp {
+.kv-sp {
   position: absolute;
   background-image: url(img/kv.jpg);
   background-size: contain;
@@ -91,6 +91,7 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+  opacity: 0;
   transform-origin: center;
   transition: all 3s cubic-bezier(0.02, 0.73, 0, 0.92);
   will-change: transform, opacity, background-position, background-position-x, background-position-y;
@@ -178,6 +179,7 @@ body {
 
 .glow {
   z-index: 999;
+  opacity: 0;
 }
 
 .glow * {
@@ -185,7 +187,7 @@ body {
   height: 100%;
   width: 100%;
   background: transparent;
-  opacity: 0.66;
+  opacity: 0.55;
   border-radius: 50%;
   will-change: opacity, transform;
 }
@@ -220,102 +222,10 @@ body {
   --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
 }
 
-.animated.delay-10 {
-  animation-delay: 8s;
-}
-
-.animated.delay-11 {
-  animation-delay: 8.1s;
-}
-
-.animated.delay-12 {
-  animation-delay: 8.2s;
-}
-
-.animated.delay-13 {
-  animation-delay: 8.25s;
-}
-
-.animated.delay-14 {
-  animation-delay: 8.3s;
-}
-
-.animated.delay-15 {
-  animation-delay: 8.35s;
-}
-
-.animated.delay-16 {
-  animation-delay: 8.4s;
-}
-
-.animated.delay-17 {
-  animation-delay: 8.45s;
-}
-
-.animated.delay-18 {
-  animation-delay: 8.47s;
-}
-
-.animated.delay-19 {
-  animation-delay: 9s;
-}
-
-.animated.delay-20 {
-  animation-delay: 9.2s;
-}
-
 .animated.fadeIn {
   animation-name: fadeIn;
   animation-duration: 1.4s;
   animation-timing-function: ease-in-out;
-}
-
-.animated.fadeInMiyuki {
-  animation-name: fadeInMiyuki, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInHonoka {
-  animation-name: fadeInHonoka, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInShizuku {
-  animation-name: fadeInShizuku, fadeIn;
-  animation-duration: 18s, 0.64s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD5 {
-  animation-name: fadeInCAD5, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD4 {
-  animation-name: fadeInCAD4, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD3 {
-  animation-name: fadeInCAD3, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD2 {
-  animation-name: fadeInCAD2, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD1 {
-  animation-name: fadeInCAD1, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), linear;
 }
 
 .animated.fadeInGlow {
@@ -333,72 +243,24 @@ body {
   }
 }
 
-@keyframes fadeInMiyuki {
-  0% {
-    transform: translate3d(-20rem, 8rem, 0) rotate(24deg) scale(1.42);
-  }
-}
-
-@keyframes fadeInHonoka {
-  0% {
-    transform: translate3d(10rem, -8rem, 0) rotate(20deg) scale(1.24);
-  }
-}
-
-@keyframes fadeInShizuku {
-  0% {
-    transform: translate3d(-7rem, 8rem, 0) rotate(12deg) scale(1.2);
-  }
-}
-
-@keyframes fadeInCAD5 {
-  0% {
-    transform: rotate(24deg) scale(1.6);
-  }
-}
-
-@keyframes fadeInCAD4 {
-  0% {
-    transform: rotate(36deg) scale(1.4);
-  }
-}
-
-@keyframes fadeInCAD3 {
-  0% {
-    transform: rotate(28deg) translateY(10%) scale(1.44);
-  }
-}
-
-@keyframes fadeInCAD2 {
-  0% {
-    transform: translate3d(0rem, -28rem, 0) scale(1.2);
-  }
-}
-
-@keyframes fadeInCAD1 {
-  0% {
-    transform: rotate(16deg) scale(1.2);
-  }
-}
-
 @media screen and (min-aspect-ratio: 7/6) {
-  .kv,
-.logo,
+  .konva,
+.kv,
 .glow {
     display: block;
   }
-  .kv.sp {
+  .kv-sp {
     display: none;
   }
 }
 
 @media screen and (max-aspect-ratio: 7/6) {
-  .kv,
-.logo,
+  .konva,
+.kv,
 .glow {
     display: none;
   }
-  .kv.sp {
+  .kv-sp {
     display: block;
   }
 }
