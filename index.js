@@ -46,17 +46,17 @@ let positions = {
 
 // kv_charas
 let kvs = {
-    // cads
-    "cad-1": { origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT }, start: { y: kv_chara_height * -0.35, rotate: 18, scale: 1.3, delay: 450 } },
-    "cad-2": { origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT }, start: { y: kv_chara_height * -0.3, rotate: 1, scale: 1.5, delay: 400 } },
-    "cad-3": { origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER }, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 20, scale: 1.44, delay: 350 } },
-    "cad-4": { origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER }, start: { rotate: 8, scale: 1.4, delay: 300 } },
-    "cad-5": { origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER }, start: { rotate: 5, scale: 1.4, delay: 250 } },
-
     // charas
-    "shizuku": { origin: { width: 1638, height: 1020, x: 0, y: 980, position: positions.BOTTOM_LEFT }, start: { x: kv_chara_width * -0.16, y: kv_chara_height * -0.24, rotate: 14, scale: 1.4, delay: 470 } },
-    "honoka": { origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT }, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.2, rotate: 14, scale: 1.4, delay: 200 } },
-    "miyuki": { origin: { width: 1809, height: 1691, x: 1746, y: 309, position: positions.BOTTOM_RIGHT }, start: { x: kv_chara_width * -0.24, y: kv_chara_height * -0.6, rotate: 26, scale: 1.52, delay: 100 } },
+    "miyuki": { origin: { width: 1809, height: 1691, x: 1746, y: 309, position: positions.BOTTOM_RIGHT, zIndex: 7 }, start: { x: kv_chara_width * -0.24, y: kv_chara_height * -0.6, rotate: 26, scale: 1.52, delay: 100 } },
+    "honoka": { origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT, zIndex: 6 }, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.2, rotate: 14, scale: 1.4, delay: 200 } },
+    "shizuku": { origin: { width: 1638, height: 1020, x: 0, y: 980, position: positions.BOTTOM_LEFT, zIndex: 5 }, start: { x: kv_chara_width * -0.16, y: kv_chara_height * -0.24, rotate: 14, scale: 1.4, delay: 470 } },
+
+    // cads
+    "cad-1": { origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT, zIndex: 4 }, start: { y: kv_chara_height * -0.35, rotate: 18, scale: 1.3, delay: 450 } },
+    "cad-2": { origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT, zIndex: 3 }, start: { y: kv_chara_height * -0.3, rotate: 1, scale: 1.5, delay: 400 } },
+    "cad-3": { origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER, zIndex: 2 }, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 20, scale: 1.44, delay: 350 } },
+    "cad-4": { origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER, zIndex: 1 }, start: { rotate: 8, scale: 1.4, delay: 300 } },
+    "cad-5": { origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER, zIndex: 0 }, start: { rotate: 5, scale: 1.4, delay: 250 } },
 };
 
 
@@ -96,12 +96,13 @@ for (let [kv, attr] of Object.entries(kvs)) {
         y: attr.kv_position.y,
         opacity: attr.opacity || 0,
     });
-    attr.konva_group.add(attr.konva);
+
     kv_charas_layer.add(attr.konva_group);
+    attr.konva_group.add(attr.konva);
 
     attr.tween = new Konva.Tween({
         node: attr.konva_group,
-        duration: 18,
+        duration: 20,
         x: attr.position.x,
         y: attr.position.y,
         scaleX: 1,
@@ -116,6 +117,11 @@ for (let [kv, attr] of Object.entries(kvs)) {
         opacity: 1,
         easing: Konva.Easings.EaseInOut,
     });
+}
+
+// zIndex
+for (let [kv, attr] of Object.entries(kvs)) {
+    attr.konva_group.zIndex(attr.origin.zIndex || 0);
 }
 
 let all_loaded_detection = setInterval(() => {
