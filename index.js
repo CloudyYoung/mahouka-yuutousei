@@ -22,10 +22,6 @@ $.mouse = function (e) {
 $.mouse({ "clientX": 0, "clientY": 0 });
 $(document).on('mousemove', $.mouse);
 
-setTimeout(function () {
-    $(".vocal")[0].play();
-}, 9000);
-
 
 // KONVA
 // Initialization - Stage
@@ -65,15 +61,15 @@ let positions = {
 // kv_charas
 let kvs = {
     // cads
-    "cad-1": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.35, rotate: 12, scale: 1.4, delay: 450 } },
-    "cad-2": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.3, scale: 1.4, delay: 400 } },
-    "cad-3": { position: positions.TOP_CENTER, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 18, scale: 1.4, delay: 350 } },
-    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 5, scale: 1.4, delay: 300 } },
-    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 3, scale: 1.4, delay: 250 } },
+    "cad-1": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.35, rotate: 18, scale: 1.3, delay: 450 } },
+    "cad-2": { position: positions.CENTER_LEFT, start: { y: kv_chara_height * -0.3, rotate: 1, scale: 1.5, delay: 400 } },
+    "cad-3": { position: positions.TOP_CENTER, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 20, scale: 1.44, delay: 350 } },
+    "cad-4": { position: positions.TOP_CENTER, start: { rotate: 8, scale: 1.4, delay: 300 } },
+    "cad-5": { position: positions.TOP_CENTER, start: { rotate: 5, scale: 1.4, delay: 250 } },
 
     // charas
-    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.16, y: kv_chara_height * -0.2, rotate: 12, scale: 1.4, delay: 470 } },
-    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.2, rotate: 14, scale: 1.4, delay: 200 } },
+    "shizuku": { position: positions.BOTTOM_LEFT, start: { x: kv_chara_width * -0.16, y: kv_chara_height * -0.24, rotate: 14, scale: 1.4, delay: 470 } },
+    "honoka": { position: positions.TOP_RIGHT, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.2, rotate: 14, scale: 1.4, delay: 200 } },
     "miyuki": { position: positions.BOTTOM_RIGHT, start: { x: kv_chara_width * -0.24, y: kv_chara_height * -0.6, rotate: 26, scale: 1.52, delay: 100 } },
 };
 
