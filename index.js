@@ -17,9 +17,8 @@ let stage = new Konva.Stage({
     height: height,
 });
 
-let kv_charas_layer = new Konva.Layer({ listening: false });
-let kv_cads_layer = new Konva.Layer({ listening: false });
-stage.add(kv_charas_layer, kv_cads_layer);
+let kvs_layer = new Konva.Layer({ listening: false });
+stage.add(kvs_layer);
 
 
 // Variables
@@ -68,8 +67,8 @@ for (let [kv, attr] of Object.entries(kvs)) {
     }
 
     attr.offset = {
-        x: -kv_chara_width / 2,
-        y: -kv_chara_height / 2,
+        x: kv_chara_width / 2,
+        y: kv_chara_height / 2,
     }
 
     attr.position = {
@@ -108,7 +107,7 @@ for (let [kv, attr] of Object.entries(kvs)) {
         opacity: attr.opacity || 0,
     });
 
-    kv_charas_layer.add(attr.konva_group);
+    kvs_layer.add(attr.konva_group);
     attr.konva_group.add(attr.konva);
 
     attr.tween = new Konva.Tween({
