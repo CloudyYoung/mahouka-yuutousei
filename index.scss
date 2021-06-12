@@ -71,6 +71,7 @@ body {
   --x: 0px;
   --y: 0px;
   --global-move-rate: 0.02;
+  z-index: 9999;
 
   &-sp {
     position: absolute;
@@ -175,6 +176,18 @@ body {
     width: 100%;
     top: 0%;
     left: 0%;
+  }
+
+  .logo10 {
+    position: absolute;
+    background-image: url(img/logo10.png);
+    background-origin: center;
+    background-position: top right;
+    background-repeat: no-repeat;
+    width: 155px;
+    height: 59px;
+    top: 3rem;
+    right: 3rem;
   }
 }
 

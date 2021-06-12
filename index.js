@@ -213,6 +213,7 @@ function start() {
 
     // Logo
     setTimeout(() => $(".logo").addClass("animated fadeIn"), 4200);
+    setTimeout(() => $(".logo10").addClass("animated fadeIn"), 4200);
 
     // Glow
     setTimeout(() => $(".glow").addClass("animated fadeInGlow"), 2200);
