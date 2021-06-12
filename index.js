@@ -67,16 +67,25 @@ for (let [kv, attr] of Object.entries(kvs)) {
         attr.loaded = true;
     }
 
-    attr.size = {
-        width: kv_chara_width * (attr.origin.width / kv_real_width),
-        height: kv_chara_height * (attr.origin.height / kv_real_height)
+    attr.offset = {
+        x: -kv_chara_width / 2,
+        y: -kv_chara_height / 2,
+    }
+
+    attr.position = {
+        x: attr.origin.position.x + attr.offset.x,
+        y: attr.origin.position.y + attr.offset.y,
     };
 
-    attr.position = attr.origin.position;
     attr.kv_position = {
         x: kv_chara_width * (attr.origin.x / kv_real_width),
         y: kv_chara_height * (attr.origin.y / kv_real_height),
-    }
+    };
+
+    attr.kv_size = {
+        width: kv_chara_width * (attr.origin.width / kv_real_width),
+        height: kv_chara_height * (attr.origin.height / kv_real_height)
+    };
 
     attr.konva_group = new Konva.Group({
         width: kv_chara_width,
@@ -86,12 +95,14 @@ for (let [kv, attr] of Object.entries(kvs)) {
         scaleX: attr.start.scale || 1,
         scaleY: attr.start.scale || 1,
         rotation: attr.start.rotate || 0,
+        offsetX: attr.offset.x,
+        offsetY: attr.offset.y,
     });
 
     attr.konva = new Konva.Image({
         image: kv_img,
-        width: attr.size.width || kv_chara_width,
-        height: attr.size.height || kv_chara_height,
+        width: attr.kv_size.width || kv_chara_width,
+        height: attr.kv_size.height || kv_chara_height,
         x: attr.kv_position.x,
         y: attr.kv_position.y,
         opacity: attr.opacity || 0,
@@ -113,7 +124,7 @@ for (let [kv, attr] of Object.entries(kvs)) {
 
     attr.tween_opacity = new Konva.Tween({
         node: attr.konva,
-        duration: 0.4,
+        duration: 0.32,
         opacity: 1,
         easing: Konva.Easings.EaseInOut,
     });
