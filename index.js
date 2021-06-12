@@ -26,7 +26,7 @@ stage.add(kvs_layer);
 let kv_real_width = 3555;
 let kv_real_height = 2000;
 
-let kv_chara_width = width;
+let kv_chara_width = width * 1.02;
 let kv_chara_height = kv_real_height * (kv_chara_width / kv_real_width);
 
 let kv_chara_x = (width - kv_chara_width);
@@ -115,9 +115,21 @@ for (let [kv, attr] of Object.entries(kvs)) {
     };
 
     attr.kv_size = {
-        width: kv_chara_width * (attr.origin.width / kv_real_width) + (width * global_move_rate * attr.move.x),
-        height: kv_chara_height * (attr.origin.height / kv_real_height) + (height * global_move_rate * attr.move.y),
+        width: kv_chara_width * (attr.origin.width / kv_real_width),
+        height: kv_chara_height * (attr.origin.height / kv_real_height),
     };
+
+    // Bottom and Right edges
+    let global_move_width = width * global_move_rate * attr.move.x;
+    let global_move_height = height * global_move_rate * attr.move.y;
+    if (kv == "miyuki") {
+        attr.kv_position.x += global_move_width;
+        attr.kv_position.y += global_move_height;
+    } else if (kv == "honoka") {
+        attr.kv_position.x += global_move_width;
+    } else if (kv == "shizuku") {
+        attr.kv_position.y += global_move_height;
+    }
 
     attr.konva_group = new Konva.Group({
         width: kv_chara_width,
