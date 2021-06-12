@@ -33,30 +33,30 @@ let kv_chara_x = (width - kv_chara_width);
 let kv_chara_y = (height - kv_chara_height);
 
 let positions = {
-    TOP_LEFT: (w, h) => { return { x: 0 + w, y: 0 + h } },
-    TOP_CENTER: (w, h) => { return { x: (width - kv_chara_width) / 2 + w, y: 0 + h } },
-    TOP_RIGHT: (w, h) => { return { x: width - kv_chara_width + w, y: 0 + h } },
-    CENTER_LEFT: (w, h) => { return { x: 0 + w, y: (height - kv_chara_height) / 2 + h } },
-    CENTER_CENTER: (w, h) => { return { x: (width - kv_chara_width) / 2 + w, y: (height - kv_chara_height) / 2 + h } },
-    CENTER_RIGHT: (w, h) => { return { x: width - kv_chara_width + w, y: (height - kv_chara_height) / 2 + h } },
-    BOTTOM_LEFT: (w, h) => { return { x: 0 + w, y: height - kv_chara_height + h } },
-    BOTTOM_CENTER: (w, h) => { return { x: (width - kv_chara_width) / 2 + w, y: height - kv_chara_height + h } },
-    BOTTOM_RIGHT: (w, h) => { return { x: width - kv_chara_width + w, y: height - kv_chara_height + h } },
+    TOP_LEFT: { x: 0, y: 0 },
+    TOP_CENTER: { x: (width - kv_chara_width) / 2, y: 0 },
+    TOP_RIGHT: { x: width - kv_chara_width, y: 0 },
+    CENTER_LEFT: { x: 0, y: (height - kv_chara_height) / 2 },
+    CENTER_CENTER: { x: (width - kv_chara_width) / 2, y: (height - kv_chara_height) / 2 },
+    CENTER_RIGHT: { x: width - kv_chara_width, y: (height - kv_chara_height) / 2 },
+    BOTTOM_LEFT: { x: 0, y: height - kv_chara_height },
+    BOTTOM_CENTER: { x: (width - kv_chara_width) / 2, y: height - kv_chara_height },
+    BOTTOM_RIGHT: { x: width - kv_chara_width, y: height - kv_chara_height },
 };
 
 // kv_charas
 let kvs = {
     // cads
-    "cad-1": { origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT }, start: { y: -0.35, rotate: 18, scale: 1.3, delay: 450 } },
-    "cad-2": { origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT }, start: { y: -0.3, rotate: 1, scale: 1.5, delay: 400 } },
-    "cad-3": { origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER }, start: { x: 0.02, y: -0.3, rotate: 20, scale: 1.44, delay: 350 } },
+    "cad-1": { origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT }, start: { y: kv_chara_height * -0.35, rotate: 18, scale: 1.3, delay: 450 } },
+    "cad-2": { origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT }, start: { y: kv_chara_height * -0.3, rotate: 1, scale: 1.5, delay: 400 } },
+    "cad-3": { origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER }, start: { x: kv_chara_width * 0.02, y: kv_chara_height * -0.3, rotate: 20, scale: 1.44, delay: 350 } },
     "cad-4": { origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER }, start: { rotate: 8, scale: 1.4, delay: 300 } },
     "cad-5": { origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER }, start: { rotate: 5, scale: 1.4, delay: 250 } },
 
     // charas
-    "shizuku": { origin: { width: 1638, height: 1020, x: 0, y: 980, position: positions.BOTTOM_LEFT }, start: { x: -0.16, y: -0.24, rotate: 14, scale: 1.4, delay: 470 } },
-    "honoka": { origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT }, start: { x: 0.1, y: 0.2, rotate: 14, scale: 1.4, delay: 200 } },
-    "miyuki": { origin: { width: 1809, height: 1691, x: 1746, y: 309, position: positions.BOTTOM_RIGHT }, start: { x: -0.02, y: 0.08, rotate: 30, scale: 1.46, delay: 100 } },
+    "shizuku": { origin: { width: 1638, height: 1020, x: 0, y: 980, position: positions.BOTTOM_LEFT }, start: { x: kv_chara_width * -0.16, y: kv_chara_height * -0.24, rotate: 14, scale: 1.4, delay: 470 } },
+    "honoka": { origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT }, start: { x: kv_chara_width * -0.1, y: kv_chara_height * -0.2, rotate: 14, scale: 1.4, delay: 200 } },
+    "miyuki": { origin: { width: 1809, height: 1691, x: 1746, y: 309, position: positions.BOTTOM_RIGHT }, start: { x: kv_chara_width * -0.24, y: kv_chara_height * -0.6, rotate: 26, scale: 1.52, delay: 100 } },
 };
 
 
@@ -72,27 +72,35 @@ for (let [kv, attr] of Object.entries(kvs)) {
         height: kv_chara_height * (attr.origin.height / kv_real_height)
     };
 
-    let calculated_origin_x = kv_chara_width * (attr.origin.x / kv_real_width);
-    let calculated_origin_y = kv_chara_height * (attr.origin.y / kv_real_height);
-    attr.position = attr.origin.position(calculated_origin_x, calculated_origin_y);
+    attr.position = attr.origin.position;
+    attr.kv_position = {
+        x: kv_chara_width * (attr.origin.x / kv_real_width),
+        y: kv_chara_height * (attr.origin.y / kv_real_height),
+    }
 
-    console.log(kv, attr.position.x, attr.position.y, attr.position.x + (attr.start.x || 0), attr.position.y + (attr.start.y || 0));
+    attr.konva_group = new Konva.Group({
+        width: kv_chara_width,
+        height: kv_chara_height,
+        x: attr.position.x + (attr.start.x || 0),
+        y: attr.position.y + (attr.start.y || 0),
+        scaleX: attr.start.scale || 1,
+        scaleY: attr.start.scale || 1,
+        rotation: attr.start.rotate || 0,
+    });
 
     attr.konva = new Konva.Image({
         image: kv_img,
         width: attr.size.width || kv_chara_width,
         height: attr.size.height || kv_chara_height,
+        x: attr.kv_position.x,
+        y: attr.kv_position.y,
         opacity: attr.opacity || 0,
-        x: attr.position.x * (1 + attr.start.x || 1),
-        y: attr.position.y * (1 + attr.start.y || 1),
-        scaleX: attr.start.scale || 1,
-        scaleY: attr.start.scale || 1,
-        rotation: attr.start.rotate || 0,
     });
-    kv_charas_layer.add(attr.konva);
+    attr.konva_group.add(attr.konva);
+    kv_charas_layer.add(attr.konva_group);
 
     attr.tween = new Konva.Tween({
-        node: attr.konva,
+        node: attr.konva_group,
         duration: 18,
         x: attr.position.x,
         y: attr.position.y,
