@@ -46,16 +46,40 @@ let positions = {
 // kv_charas
 let kvs = {
     // charas
-    "miyuki": { origin: { width: 1877, height: 1792, x: 1746, y: 309, position: positions.BOTTOM_RIGHT, zIndex: 7 }, start: { x: kv_chara_width * -0.12, y: kv_chara_height * 0.2, rotate: 24, scale: 1.42, delay: 100 } },
-    "honoka": { origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT, zIndex: 6 }, start: { x: kv_chara_width * 0.04, y: kv_chara_height * 0.14, rotate: 14, scale: 1.24, delay: 200 } },
-    "shizuku": { origin: { width: 1685, height: 1443, x: -47, y: 980, position: positions.BOTTOM_LEFT, zIndex: 5 }, start: { x: kv_chara_width * -0.06, y: kv_chara_height * -0.02, rotate: 14, scale: 1.2, delay: 500 } },
+    "miyuki": {
+        origin: { width: 1877, height: 1792, x: 1746, y: 309, position: positions.BOTTOM_RIGHT, zIndex: 7 },
+        start: { x: kv_chara_width * -0.12, y: kv_chara_height * 0.2, rotate: 24, scale: 1.42, delay: 100 }
+    },
+    "honoka": {
+        origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT, zIndex: 6 },
+        start: { x: kv_chara_width * 0.04, y: kv_chara_height * 0.14, rotate: 14, scale: 1.24, delay: 200 }
+    },
+    "shizuku": {
+        origin: { width: 1685, height: 1443, x: -47, y: 980, position: positions.BOTTOM_LEFT, zIndex: 5 },
+        start: { x: kv_chara_width * -0.06, y: kv_chara_height * -0.02, rotate: 14, scale: 1.2, delay: 500 }
+    },
 
     // cads
-    "cad-1": { origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT, zIndex: 4 }, start: { x: kv_chara_width * 0.1, y: kv_chara_height * -0.1, rotate: 8, scale: 1.3, delay: 450 } },
-    "cad-2": { origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT, zIndex: 3 }, start: { x: kv_chara_width * 0.06, y: kv_chara_height * 0.02, rotate: 12, scale: 1.3, delay: 400 } },
-    "cad-3": { origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER, zIndex: 2 }, start: { x: kv_chara_width * 0.1, y: kv_chara_height * 0.08, rotate: 20, scale: 1.44, delay: 350 } },
-    "cad-4": { origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER, zIndex: 1 }, start: { x: kv_chara_width * 0.16, y: kv_chara_height * 0.1, rotate: 8, scale: 1.4, delay: 300 } },
-    "cad-5": { origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER, zIndex: 0 }, start: { x: kv_chara_width * 0.08, y: kv_chara_height * 0.2, rotate: 5, scale: 1.6, delay: 250 } },
+    "cad-1": {
+        origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT, zIndex: 4 },
+        start: { x: kv_chara_width * 0.1, y: kv_chara_height * -0.1, rotate: 8, scale: 1.3, delay: 450 }
+    },
+    "cad-2": {
+        origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT, zIndex: 3 },
+        start: { x: kv_chara_width * 0.06, y: kv_chara_height * 0.02, rotate: 12, scale: 1.3, delay: 400 }
+    },
+    "cad-3": {
+        origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER, zIndex: 2 },
+        start: { x: kv_chara_width * 0.1, y: kv_chara_height * 0.08, rotate: 20, scale: 1.44, delay: 350 }
+    },
+    "cad-4": {
+        origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER, zIndex: 1 },
+        start: { x: kv_chara_width * 0.16, y: kv_chara_height * 0.1, rotate: 8, scale: 1.4, delay: 300 }
+    },
+    "cad-5": {
+        origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER, zIndex: 0 },
+        start: { x: kv_chara_width * 0.08, y: kv_chara_height * 0.2, rotate: 5, scale: 1.6, delay: 250 }
+    },
 };
 
 
