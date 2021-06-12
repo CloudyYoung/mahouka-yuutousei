@@ -1,6 +1,7 @@
 
 let width = window.screen.width;
 let height = window.screen.height;
+let global_move_rate = 0.02;
 
 
 $("audio").each((index, each) => {
@@ -25,7 +26,7 @@ stage.add(kvs_layer);
 let kv_real_width = 3555;
 let kv_real_height = 2000;
 
-let kv_chara_width = width * 1.01;
+let kv_chara_width = width;
 let kv_chara_height = kv_real_height * (kv_chara_width / kv_real_width);
 
 let kv_chara_x = (width - kv_chara_width);
@@ -114,8 +115,8 @@ for (let [kv, attr] of Object.entries(kvs)) {
     };
 
     attr.kv_size = {
-        width: kv_chara_width * (attr.origin.width / kv_real_width),
-        height: kv_chara_height * (attr.origin.height / kv_real_height)
+        width: kv_chara_width * (attr.origin.width / kv_real_width) + (width * global_move_rate * attr.move.x),
+        height: kv_chara_height * (attr.origin.height / kv_real_height) + (height * global_move_rate * attr.move.y),
     };
 
     attr.konva_group = new Konva.Group({
@@ -132,8 +133,8 @@ for (let [kv, attr] of Object.entries(kvs)) {
 
     attr.konva = new Konva.Image({
         image: kv_img,
-        width: attr.kv_size.width || kv_chara_width,
-        height: attr.kv_size.height || kv_chara_height,
+        width: attr.kv_size.width,
+        height: attr.kv_size.height,
         x: attr.kv_position.x,
         y: attr.kv_position.y,
         opacity: attr.opacity || 0,
@@ -208,11 +209,6 @@ function start() {
 
 
 $.mouse = function (e) {
-    let wr = e.clientX / width;
-    let hr = e.clientY / height;
-
-    let global_move_rate = 0.02;
-
     let x = e.clientX * global_move_rate;
     let y = e.clientY * global_move_rate;
 
@@ -221,10 +217,7 @@ $.mouse = function (e) {
         attr.konva.offsetY(y * attr.move.y);
     }
     stage.batchDraw();
-
-
-    // console.log(x, y);
 };
 
-$.mouse({ "clientX": 0, "clientY": 0 });
+$.mouse({ "clientX": width / 2, "clientY": height / 2 });
 $(document).on('mousemove', $.mouse);
