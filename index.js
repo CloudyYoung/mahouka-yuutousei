@@ -48,37 +48,45 @@ let kvs = {
     // charas
     "miyuki": {
         origin: { width: 1877, height: 1792, x: 1746, y: 309, position: positions.BOTTOM_RIGHT, zIndex: 7 },
-        start: { x: kv_chara_width * -0.12, y: kv_chara_height * 0.2, rotate: 24, scale: 1.42, delay: 100 }
+        start: { x: kv_chara_width * -0.12, y: kv_chara_height * 0.2, rotate: 24, scale: 1.42, delay: 100 },
+        move: { x: 1.7, y: 1.4 },
     },
     "honoka": {
         origin: { width: 1193, height: 1120, x: 2124, y: 2, position: positions.TOP_RIGHT, zIndex: 6 },
-        start: { x: kv_chara_width * 0.04, y: kv_chara_height * 0.14, rotate: 14, scale: 1.24, delay: 200 }
+        start: { x: kv_chara_width * 0.04, y: kv_chara_height * 0.14, rotate: 14, scale: 1.24, delay: 200 },
+        move: { x: 1.2, y: 1.8 },
     },
     "shizuku": {
         origin: { width: 1685, height: 1443, x: -47, y: 980, position: positions.BOTTOM_LEFT, zIndex: 5 },
-        start: { x: kv_chara_width * -0.06, y: kv_chara_height * -0.02, rotate: 14, scale: 1.2, delay: 500 }
+        start: { x: kv_chara_width * -0.06, y: kv_chara_height * -0.02, rotate: 14, scale: 1.2, delay: 500 },
+        move: { x: 1.4, y: 1.2 },
     },
 
     // cads
     "cad-1": {
         origin: { width: 156, height: 391, x: 171, y: 683, position: positions.CENTER_LEFT, zIndex: 4 },
-        start: { x: kv_chara_width * 0.1, y: kv_chara_height * -0.1, rotate: 8, scale: 1.3, delay: 450 }
+        start: { x: kv_chara_width * 0.1, y: kv_chara_height * -0.1, rotate: 8, scale: 1.3, delay: 450 },
+        move: { x: 0.8, y: 0.8 },
     },
     "cad-2": {
         origin: { width: 434, height: 400, x: 0, y: 108, position: positions.CENTER_LEFT, zIndex: 3 },
-        start: { x: kv_chara_width * 0.06, y: kv_chara_height * 0.02, rotate: 12, scale: 1.3, delay: 400 }
+        start: { x: kv_chara_width * 0.06, y: kv_chara_height * 0.02, rotate: 12, scale: 1.3, delay: 400 },
+        move: { x: 0.7, y: 0.8 },
     },
     "cad-3": {
         origin: { width: 732, height: 553, x: 616, y: 0, position: positions.TOP_CENTER, zIndex: 2 },
-        start: { x: kv_chara_width * 0.1, y: kv_chara_height * 0.08, rotate: 20, scale: 1.44, delay: 350 }
+        start: { x: kv_chara_width * 0.1, y: kv_chara_height * 0.08, rotate: 20, scale: 1.44, delay: 350 },
+        move: { x: 0.9, y: 0.8 },
     },
     "cad-4": {
         origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER, zIndex: 1 },
-        start: { x: kv_chara_width * 0.16, y: kv_chara_height * 0.1, rotate: 8, scale: 1.4, delay: 300 }
+        start: { x: kv_chara_width * 0.16, y: kv_chara_height * 0.1, rotate: 8, scale: 1.4, delay: 300 },
+        move: { x: 1.2, y: 1.2 },
     },
     "cad-5": {
         origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER, zIndex: 0 },
-        start: { x: kv_chara_width * 0.08, y: kv_chara_height * 0.2, rotate: 5, scale: 1.6, delay: 250 }
+        start: { x: kv_chara_width * 0.08, y: kv_chara_height * 0.2, rotate: 5, scale: 1.6, delay: 250 },
+        move: { x: 1, y: 1.1 },
     },
 };
 
@@ -203,12 +211,16 @@ $.mouse = function (e) {
     let wr = e.clientX / width;
     let hr = e.clientY / height;
 
-    let x = e.clientX;
-    let y = e.clientY;
+    let global_move_rate = 0.02;
 
-    // $(".kv").css({ "--x": `${x}px`, "--y": `${y}px` });
-    // kvs["miyuki"].konva.offset({ x: x, y: y });
-    // stage.batchDraw();
+    let x = e.clientX * global_move_rate;
+    let y = e.clientY * global_move_rate;
+
+    for (let [kv, attr] of Object.entries(kvs)) {
+        attr.konva.offsetX(x * attr.move.x);
+        attr.konva.offsetY(y * attr.move.y);
+    }
+    stage.batchDraw();
 
 
     // console.log(x, y);
