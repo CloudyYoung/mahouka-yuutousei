@@ -81,12 +81,12 @@ let kvs = {
     },
     "cad-4": {
         origin: { width: 288, height: 197, x: 1466, y: 318, position: positions.TOP_CENTER, zIndex: 1 },
-        start: { x: kv_chara_width * 0.16, y: kv_chara_height * 0.1, rotate: 8, scale: 1.4, delay: 300 },
+        start: { x: kv_chara_width * 0.16, y: kv_chara_height * 0.16, rotate: 8, scale: 1.2, delay: 300 },
         move: { x: 1.2, y: 1.2 },
     },
     "cad-5": {
         origin: { width: 234, height: 239, x: 1825, y: 22, position: positions.TOP_CENTER, zIndex: 0 },
-        start: { x: kv_chara_width * 0.08, y: kv_chara_height * 0.2, rotate: 5, scale: 1.6, delay: 250 },
+        start: { x: kv_chara_width * 0.12, y: kv_chara_height * 0.15, rotate: 6, scale: 1.4, delay: 250 },
         move: { x: 1, y: 1.1 },
     },
 };
