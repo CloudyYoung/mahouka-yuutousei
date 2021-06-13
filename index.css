@@ -70,7 +70,6 @@ body {
 .kv {
   --x: 0px;
   --y: 0px;
-  --global-move-rate: 0.02;
   z-index: 9999;
 }
 
@@ -94,73 +93,7 @@ body {
   width: 100%;
   opacity: 0;
   transform-origin: center;
-  will-change: transform, opacity, background-position, background-position-x, background-position-y;
-}
-
-.kv .honoka {
-  background-image: url(img/honoka.png);
-  background-origin: top right;
-  background-position: top right;
-  right: 0;
-  top: calc(-100% * var(--move-rate-y));
-  z-index: 2199;
-}
-
-.kv .miyuki {
-  background-image: url(img/miyuki.png);
-  background-origin: bottom right;
-  background-position: bottom right;
-  z-index: 2399;
-}
-
-.kv .shizuku {
-  --move-rate-x: calc(var(--global-move-rate) * 1.4);
-  --move-rate-y: calc(var(--global-move-rate) * 1.2);
-  background-image: url(img/shizuku.png);
-  background-origin: bottom left;
-  background-position: bottom left;
-  bottom: 0;
-  z-index: 2299;
-}
-
-.kv .cad-1 {
-  background-image: url(img/cad-1.png);
-  background-position: center left;
-  left: 0;
-  bottom: 0;
-  z-index: 1199;
-}
-
-.kv .cad-2 {
-  background-image: url(img/cad-2.png);
-  background-position: left center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .cad-3 {
-  background-image: url(img/cad-3.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .cad-4 {
-  background-image: url(img/cad-4.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .cad-5 {
-  background-image: url(img/cad-5.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
+  will-change: transform, opacity, background-position;
 }
 
 .kv .logo {
