@@ -129,6 +129,13 @@ for (let [kv, attr] of Object.entries(kvs)) {
         attr.kv_position.x += global_move_width;
     } else if (kv == "shizuku") {
         attr.kv_position.y += global_move_height;
+    } else if (kv == "cad-1" || kv == "cad-4" || kv == "cad-5") {
+        attr.kv_position.x += global_move_width / 2;
+        attr.kv_position.y += global_move_height / 2;
+    } else if (kv == "cad-2") {
+        attr.kv_position.y += global_move_height / 2;
+    } else if (kv == "cad-3") {
+        attr.kv_position.x += global_move_width / 2;
     }
 
     attr.konva_group = new Konva.Group({

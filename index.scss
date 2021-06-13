@@ -9,7 +9,7 @@
 }
 
 html {
-  font-size: calc(100vh / 140);
+  font-size: calc(100vw / 140);
 }
 
 body {
@@ -184,10 +184,10 @@ body {
     background-origin: center;
     background-position: top right;
     background-repeat: no-repeat;
-    width: 155px;
-    height: 59px;
-    top: 3rem;
-    right: 3rem;
+    width: 14rem;
+    height: 14rem;
+    top: 1.4rem;
+    right: 1.4rem;
   }
 }
 
