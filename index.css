@@ -29,6 +29,10 @@ body {
   overflow: hidden;
 }
 
+.transparent {
+  opacity: 0;
+}
+
 .catch {
   position: absolute;
   background-image: url(img/catch_pc.png);
@@ -73,30 +77,19 @@ body {
   z-index: 9999;
 }
 
-.kv-sp {
-  position: absolute;
-  background-image: url(img/kv.jpg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  z-index: 9;
-}
-
-.kv * {
+.kv .logos * {
   position: absolute;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  opacity: 0;
   transform-origin: center;
   will-change: transform, opacity, background-position;
 }
 
-.kv .logo {
+.kv .logos .logo {
+  z-index: 9999;
   position: absolute;
   background-image: url(img/logo.png);
   background-origin: center;
@@ -110,7 +103,8 @@ body {
   left: 0%;
 }
 
-.kv .logo10 {
+.kv .logos .logo10 {
+  z-index: 9999;
   position: absolute;
   background-image: url(img/logo10.png);
   background-origin: center;
@@ -122,12 +116,11 @@ body {
   right: 1.4rem;
 }
 
-.glow {
-  z-index: 999;
-  opacity: 0;
+.kv .glow {
+  z-index: 1999;
 }
 
-.glow * {
+.kv .glow * {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -137,7 +130,7 @@ body {
   will-change: opacity, transform;
 }
 
-.glow .honoka {
+.kv .glow .honoka {
   top: 0;
   right: 0;
   height: 110%;
@@ -146,14 +139,14 @@ body {
   background: radial-gradient(ellipse at center, #f7d67d 0%, transparent 70%);
 }
 
-.glow .shizuku {
+.kv .glow .shizuku {
   left: 0;
   bottom: 0;
   transform: translate(-50%, 50%);
   background: radial-gradient(ellipse at center, #ba88e7 0%, #ba88e7 26%, transparent 70%);
 }
 
-.glow .miyuki {
+.kv .glow .miyuki {
   right: 0;
   bottom: 0;
   height: 90%;
@@ -162,9 +155,27 @@ body {
   background: radial-gradient(ellipse at center, #86dfe7 0%, #86dfe7 40%, transparent 70%);
 }
 
+.kv .konva {
+  z-index: 8999;
+}
+
+.kv-sp {
+  z-index: 9999;
+}
+
+.kv-sp .poster {
+  position: absolute;
+  background-image: url(img/kv.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+}
+
 .animated {
   animation-fill-mode: both;
-  --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
 }
 
 .animated.fadeIn {
@@ -189,9 +200,7 @@ body {
 }
 
 @media screen and (min-aspect-ratio: 7/6) {
-  .konva,
-.kv,
-.glow {
+  .kv {
     display: block;
   }
   .kv-sp {
@@ -200,9 +209,7 @@ body {
 }
 
 @media screen and (max-aspect-ratio: 7/6) {
-  .konva,
-.kv,
-.glow {
+  .kv {
     display: none;
   }
   .kv-sp {

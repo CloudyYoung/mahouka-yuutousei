@@ -8,6 +8,8 @@ $("audio").each((index, each) => {
     each.volume = 0.02;
 });
 
+$(".logo, .logo10, .glow").addClass("transparent");
+$(".kv, .kv-sp").addClass("animated fadeIn");
 
 
 // KONVA
@@ -227,12 +229,12 @@ function start() {
         setTimeout(() => attr.tween_opacity.play(), 3050 + (attr.start.delay || 0));
     }
 
-    // Logo
-    setTimeout(() => $(".logo").addClass("animated fadeIn"), 4200);
-    setTimeout(() => $(".logo10").addClass("animated fadeIn"), 4200);
-
-    // Glow
+    // Logo & Glow
+    setTimeout(() => $(".logo, .logo10").addClass("animated fadeIn"), 4200);
     setTimeout(() => $(".glow").addClass("animated fadeInGlow"), 2200);
+
+    // Clear
+    setTimeout(() => $(".kv *").removeClass("animated fadeIn fadeInGlow transparent"), 6000);
 }
 
 
