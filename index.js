@@ -138,6 +138,8 @@ for (let [kv, attr] of Object.entries(kvs)) {
         attr.kv_position.x += global_move_width / 2;
     }
 
+    // Wrapper group, size as original big kv 3555 x 2000
+    // Apply start animation
     attr.konva_group = new Konva.Group({
         width: kv_chara_width,
         height: kv_chara_height,
@@ -150,6 +152,8 @@ for (let [kv, attr] of Object.entries(kvs)) {
         offsetY: attr.offset.y,
     });
 
+    // Actual kv, size as it is
+    // Apply mouse movement offset
     attr.konva = new Konva.Image({
         image: kv_img,
         width: attr.kv_size.width,
