@@ -154,7 +154,7 @@ for (let [kv, attr] of Object.entries(kvs)) {
 
     // Actual kv, size as it is
     // Apply mouse movement offset
-    attr.konva = new Konva.Image({
+    attr.konva_kv = new Konva.Image({
         image: kv_img,
         width: attr.kv_size.width,
         height: attr.kv_size.height,
@@ -164,9 +164,9 @@ for (let [kv, attr] of Object.entries(kvs)) {
     });
 
     kvs_layer.add(attr.konva_group);
-    attr.konva_group.add(attr.konva);
+    attr.konva_group.add(attr.konva_kv);
 
-    attr.tween = new Konva.Tween({
+    attr.tween_start = new Konva.Tween({
         node: attr.konva_group,
         duration: 20,
         x: attr.position.x,
@@ -178,7 +178,7 @@ for (let [kv, attr] of Object.entries(kvs)) {
     });
 
     attr.tween_opacity = new Konva.Tween({
-        node: attr.konva,
+        node: attr.konva_kv,
         duration: 0.4,
         opacity: 1,
         easing: Konva.Easings.EaseInOut,
@@ -218,7 +218,7 @@ function mahouka_bezier(t, b, c, d) {
 function start() {
     // kvs start animation
     for (let [kv, attr] of Object.entries(kvs)) {
-        setTimeout(() => attr.tween.play(), 3000 + (attr.start.delay || 0));
+        setTimeout(() => attr.tween_start.play(), 3000 + (attr.start.delay || 0));
         setTimeout(() => attr.tween_opacity.play(), 3050 + (attr.start.delay || 0));
     }
 
@@ -237,8 +237,8 @@ $.mouse = function (e) {
     let y = e.clientY * global_move_rate;
 
     for (let [kv, attr] of Object.entries(kvs)) {
-        attr.konva.offsetX(x * attr.move.x);
-        attr.konva.offsetY(y * attr.move.y);
+        attr.konva_kv.offsetX(x * attr.move.x);
+        attr.konva_kv.offsetY(y * attr.move.y);
     }
     stage.batchDraw();
 };
