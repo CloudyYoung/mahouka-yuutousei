@@ -59,7 +59,7 @@ let kvs = {
     },
     "shizuku": {
         origin: { width: 1685, height: 1443, x: -47, y: 980, position: positions.BOTTOM_LEFT, zIndex: 5 },
-        start: { x: kv_chara_width * -0.06, y: kv_chara_height * -0.02, rotate: 14, scale: 1.2, delay: 500 },
+        start: { x: kv_chara_width * -0.02, y: kv_chara_height * -0.01, rotate: 14, scale: 1.2, delay: 500 },
         move: { x: 1.2, y: 1.2 },
     },
 
