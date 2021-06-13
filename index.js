@@ -241,6 +241,8 @@ $.mouse = function (e) {
     let x = e.clientX * global_move_rate;
     let y = e.clientY * global_move_rate;
 
+    $(".kv").css({ "--x": `${x}px`, "--y": `${y}px` });
+
     for (let [kv, attr] of Object.entries(kvs)) {
         let total_x = x * attr.move.x;
         let total_y = y * attr.move.y;

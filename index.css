@@ -94,7 +94,6 @@ body {
   width: 100%;
   opacity: 0;
   transform-origin: center;
-  transition: all 3s cubic-bezier(0.02, 0.73, 0, 0.92);
   will-change: transform, opacity, background-position, background-position-x, background-position-y;
 }
 
@@ -168,8 +167,8 @@ body {
   position: absolute;
   background-image: url(img/logo.png);
   background-origin: center;
-  background-position-x: 38%;
-  background-position-y: 47%;
+  background-position-x: calc(38% + var(--x) * -0.2);
+  background-position-y: calc(47% + var(--y) * -0.2);
   background-repeat: no-repeat;
   background-size: 30% auto;
   height: 100%;
