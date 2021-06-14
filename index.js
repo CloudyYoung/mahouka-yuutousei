@@ -8,9 +8,6 @@ $("audio").each((index, each) => {
     each.volume = 0.02;
 });
 
-$(".logo, .logo10, .glow").addClass("transparent");
-$(".kv, .kv-sp").addClass("animated fadeIn");
-
 
 // KONVA
 // Initialization - Stage
@@ -46,7 +43,7 @@ let positions = {
     BOTTOM_RIGHT: { x: width - kv_chara_width, y: height - kv_chara_height },
 };
 
-// kv_charas
+// kv_charas data
 let kvs = {
     // charas
     "miyuki": {
@@ -93,7 +90,7 @@ let kvs = {
     },
 };
 
-
+// kv_charas initialize
 for (let [kv, attr] of Object.entries(kvs)) {
     let kv_img = new Image();
     kv_img.src = `img/${kv}.png`;
@@ -192,7 +189,7 @@ for (let [kv, attr] of Object.entries(kvs)) {
     });
 }
 
-// zIndex
+// kv_charas zIndex
 for (let [kv, attr] of Object.entries(kvs)) {
     attr.konva_group.zIndex(attr.origin.zIndex || 0);
 }
@@ -236,7 +233,6 @@ function start() {
     // Clear
     setTimeout(() => $(".kv *").removeClass("animated fadeIn fadeInGlow transparent"), 6000);
 }
-
 
 
 $.mouse = function (e) {

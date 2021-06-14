@@ -78,6 +78,7 @@ body {
 }
 
 .kv .logos * {
+  z-index: 9999;
   position: absolute;
   background-size: contain;
   background-position: center;
@@ -89,7 +90,6 @@ body {
 }
 
 .kv .logos .logo {
-  z-index: 9999;
   position: absolute;
   background-image: url(img/logo.png);
   background-origin: center;
@@ -104,7 +104,6 @@ body {
 }
 
 .kv .logos .logo10 {
-  z-index: 9999;
   position: absolute;
   background-image: url(img/logo10.png);
   background-origin: center;
@@ -117,15 +116,16 @@ body {
 }
 
 .kv .glow {
-  z-index: 1999;
+  z-index: -9;
 }
 
 .kv .glow * {
+  z-index: -9;
   position: absolute;
   height: 100%;
   width: 100%;
   background: transparent;
-  opacity: 0.6;
+  opacity: 0.62;
   border-radius: 50%;
   will-change: opacity, transform;
 }
