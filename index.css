@@ -9,7 +9,7 @@
 }
 
 html {
-  font-size: calc(100vh / 140);
+  font-size: calc(100vw / 140);
 }
 
 body {
@@ -27,6 +27,10 @@ body {
   color: #000;
   text-size-adjust: 100%;
   overflow: hidden;
+}
+
+.transparent {
+  opacity: 0;
 }
 
 .catch {
@@ -70,10 +74,96 @@ body {
 .kv {
   --x: 0px;
   --y: 0px;
-  --global-move-rate: 0.02;
+  z-index: 9999;
 }
 
-.kv.sp {
+.kv .logos * {
+  z-index: 9999;
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+  will-change: transform, opacity, background-position;
+}
+
+.kv .logos .logo {
+  position: absolute;
+  background-image: url(img/logo.png);
+  background-origin: center;
+  background-position-x: calc(38% + var(--x) * -0.2);
+  background-position-y: calc(47% + var(--y) * -0.2);
+  background-repeat: no-repeat;
+  background-size: 30% auto;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.kv .logos .logo10 {
+  position: absolute;
+  background-image: url(img/logo10.png);
+  background-origin: center;
+  background-position: top right;
+  background-repeat: no-repeat;
+  width: 14rem;
+  height: 14rem;
+  top: 1.4rem;
+  right: 1.4rem;
+}
+
+.kv .glow {
+  z-index: -9;
+}
+
+.kv .glow * {
+  z-index: -9;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  opacity: 0.62;
+  border-radius: 50%;
+  will-change: opacity, transform;
+}
+
+.kv .glow .honoka {
+  top: 0;
+  right: 0;
+  height: 110%;
+  width: 110%;
+  transform: translate(50%, -50%);
+  background: radial-gradient(ellipse at center, #f7d67d 0%, transparent 70%);
+}
+
+.kv .glow .shizuku {
+  left: 0;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(ellipse at center, #ba88e7 0%, #ba88e7 26%, transparent 70%);
+}
+
+.kv .glow .miyuki {
+  right: 0;
+  bottom: 0;
+  height: 90%;
+  width: 90%;
+  transform: translate(50%, 50%);
+  background: radial-gradient(ellipse at center, #86dfe7 0%, #86dfe7 40%, transparent 70%);
+}
+
+.kv .konva {
+  z-index: 8999;
+}
+
+.kv-sp {
+  z-index: 9999;
+}
+
+.kv-sp .poster {
   position: absolute;
   background-image: url(img/kv.jpg);
   background-size: contain;
@@ -84,238 +174,14 @@ body {
   z-index: 9;
 }
 
-.kv * {
-  position: absolute;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  transform-origin: center;
-  transition: all 3s cubic-bezier(0.02, 0.73, 0, 0.92);
-  will-change: transform, opacity, background-position, background-position-x, background-position-y;
-}
-
-.kv .honoka {
-  background-image: url(img/honoka.png);
-  background-origin: top right;
-  background-position: top right;
-  right: 0;
-  top: calc(-100% * var(--move-rate-y));
-  z-index: 2199;
-}
-
-.kv .miyuki {
-  background-image: url(img/miyuki.png);
-  background-origin: bottom right;
-  background-position: bottom right;
-  z-index: 2399;
-}
-
-.kv .shizuku {
-  --move-rate-x: calc(var(--global-move-rate) * 1.4);
-  --move-rate-y: calc(var(--global-move-rate) * 1.2);
-  background-image: url(img/shizuku.png);
-  background-origin: bottom left;
-  background-position: bottom left;
-  bottom: 0;
-  z-index: 2299;
-}
-
-.kv .cad-1 {
-  background-image: url(img/cad-1.png);
-  background-position: center left;
-  left: 0;
-  bottom: 0;
-  z-index: 1199;
-}
-
-.kv .cad-2 {
-  background-image: url(img/cad-2.png);
-  background-position: left center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .cad-3 {
-  background-image: url(img/cad-3.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .cad-4 {
-  background-image: url(img/cad-4.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .cad-5 {
-  background-image: url(img/cad-5.png);
-  background-position: top center;
-  left: 0;
-  top: 0;
-  z-index: 1199;
-}
-
-.kv .logo {
-  position: absolute;
-  background-image: url(img/logo.png);
-  background-origin: center;
-  background-position-x: 40%;
-  background-position-y: 47%;
-  background-repeat: no-repeat;
-  background-size: 30% auto;
-  height: 100%;
-  width: 100%;
-  top: 0%;
-  left: 0%;
-}
-
-.glow {
-  z-index: 999;
-}
-
-.glow * {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  opacity: 0.66;
-  border-radius: 50%;
-  will-change: opacity, transform;
-}
-
-.glow .honoka {
-  top: 0;
-  right: 0;
-  height: 110%;
-  width: 110%;
-  transform: translate(50%, -50%);
-  background: radial-gradient(ellipse at center, #f7d67d 0%, transparent 70%);
-}
-
-.glow .shizuku {
-  left: 0;
-  bottom: 0;
-  transform: translate(-50%, 50%);
-  background: radial-gradient(ellipse at center, #ba88e7 0%, #ba88e7 26%, transparent 70%);
-}
-
-.glow .miyuki {
-  right: 0;
-  bottom: 0;
-  height: 90%;
-  width: 90%;
-  transform: translate(50%, 50%);
-  background: radial-gradient(ellipse at center, #86dfe7 0%, #86dfe7 40%, transparent 70%);
-}
-
 .animated {
   animation-fill-mode: both;
-  --bezier: cubic-bezier(0.01, 0.9, 0, 0.79);
-}
-
-.animated.delay-10 {
-  animation-delay: 8s;
-}
-
-.animated.delay-11 {
-  animation-delay: 8.1s;
-}
-
-.animated.delay-12 {
-  animation-delay: 8.2s;
-}
-
-.animated.delay-13 {
-  animation-delay: 8.25s;
-}
-
-.animated.delay-14 {
-  animation-delay: 8.3s;
-}
-
-.animated.delay-15 {
-  animation-delay: 8.35s;
-}
-
-.animated.delay-16 {
-  animation-delay: 8.4s;
-}
-
-.animated.delay-17 {
-  animation-delay: 8.45s;
-}
-
-.animated.delay-18 {
-  animation-delay: 8.47s;
-}
-
-.animated.delay-19 {
-  animation-delay: 9s;
-}
-
-.animated.delay-20 {
-  animation-delay: 9.2s;
 }
 
 .animated.fadeIn {
   animation-name: fadeIn;
   animation-duration: 1.4s;
   animation-timing-function: ease-in-out;
-}
-
-.animated.fadeInMiyuki {
-  animation-name: fadeInMiyuki, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInHonoka {
-  animation-name: fadeInHonoka, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInShizuku {
-  animation-name: fadeInShizuku, fadeIn;
-  animation-duration: 18s, 0.64s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD5 {
-  animation-name: fadeInCAD5, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD4 {
-  animation-name: fadeInCAD4, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD3 {
-  animation-name: fadeInCAD3, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD2 {
-  animation-name: fadeInCAD2, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), ease-in-out;
-}
-
-.animated.fadeInCAD1 {
-  animation-name: fadeInCAD1, fadeIn;
-  animation-duration: 18s, 0.4s;
-  animation-timing-function: var(--bezier), linear;
 }
 
 .animated.fadeInGlow {
@@ -333,72 +199,20 @@ body {
   }
 }
 
-@keyframes fadeInMiyuki {
-  0% {
-    transform: translate3d(-20rem, 8rem, 0) rotate(24deg) scale(1.42);
-  }
-}
-
-@keyframes fadeInHonoka {
-  0% {
-    transform: translate3d(10rem, -8rem, 0) rotate(20deg) scale(1.24);
-  }
-}
-
-@keyframes fadeInShizuku {
-  0% {
-    transform: translate3d(-7rem, 8rem, 0) rotate(12deg) scale(1.2);
-  }
-}
-
-@keyframes fadeInCAD5 {
-  0% {
-    transform: rotate(24deg) scale(1.6);
-  }
-}
-
-@keyframes fadeInCAD4 {
-  0% {
-    transform: rotate(36deg) scale(1.4);
-  }
-}
-
-@keyframes fadeInCAD3 {
-  0% {
-    transform: rotate(28deg) translateY(10%) scale(1.44);
-  }
-}
-
-@keyframes fadeInCAD2 {
-  0% {
-    transform: translate3d(0rem, -28rem, 0) scale(1.2);
-  }
-}
-
-@keyframes fadeInCAD1 {
-  0% {
-    transform: rotate(16deg) scale(1.2);
-  }
-}
-
 @media screen and (min-aspect-ratio: 7/6) {
-  .kv,
-.logo,
-.glow {
+  .kv {
     display: block;
   }
-  .kv.sp {
+  .kv-sp {
     display: none;
   }
 }
 
 @media screen and (max-aspect-ratio: 7/6) {
-  .kv,
-.logo,
-.glow {
+  .kv {
     display: none;
   }
-  .kv.sp {
+  .kv-sp {
     display: block;
   }
 }

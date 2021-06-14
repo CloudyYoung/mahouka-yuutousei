@@ -6,6 +6,14 @@
 	{
 		"properties" : 
 		{
+			"_10th_anniversary_logo" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "10th Anniversary Logo",
+				"type" : "bool",
+				"value" : true
+			},
 			"schemecolor" : 
 			{
 				"order" : 0,

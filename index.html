@@ -4,48 +4,50 @@
 <head>
     <link href="index.css" rel="stylesheet">
     <script type="text/javascript" src="jquery.js"></script>
+    <script src="konva.min.js"></script>
 
+    <link rel="preload" as="image" href="img/miyuki.png">
     <link rel="preload" as="image" href="img/honoka.png">
     <link rel="preload" as="image" href="img/shizuku.png">
-    <link rel="preload" as="image" href="img/miyuki.png">
     <link rel="preload" as="image" href="img/cad-1.png">
     <link rel="preload" as="image" href="img/cad-2.png">
     <link rel="preload" as="image" href="img/cad-3.png">
     <link rel="preload" as="image" href="img/cad-4.png">
     <link rel="preload" as="image" href="img/cad-5.png">
     <link rel="preload" as="image" href="img/logo.png">
+    <link rel="preload" as="image" href="img/logo10.png">
 </head>
 
 <body>
-    <div class="catch"></div>
-    <div class="kv">
-        <div class="miyuki animated fadeInMiyuki delay-11"></div>
-        <div class="honoka animated fadeInHonoka delay-12"></div>
-        <div class="shizuku animated fadeInShizuku delay-18"></div>
-        <div class="cad-1 animated fadeInCAD1 delay-17"></div>
-        <div class="cad-2 animated fadeInCAD2 delay-16"></div>
-        <div class="cad-3 animated fadeInCAD3 delay-15"></div>
-        <div class="cad-4 animated fadeInCAD4 delay-14"></div>
-        <div class="cad-5 animated fadeInCAD5 delay-13"></div>
-        <div class="logo animated fadeIn delay-20"></div>
+    <div class="kv-sp animated fadeIn">
+        <div class="poster"></div>
     </div>
 
-    <div class="kv sp animated fadeIn delay-11"></div>
-
-    <div class="glow animated fadeInGlow">
-        <div class="miyuki"></div>
-        <div class="honoka"></div>
-        <div class="shizuku"></div>
+    <div class="kv animated fadeIn">
+        <div class="logos">
+            <div class="logo transparent"></div>
+            <div class="logo10-wrapper">
+                <div class="logo10 transparent"></div>
+            </div>
+        </div>
+        <div class="glow transparent">
+            <div class="miyuki"></div>
+            <div class="honoka"></div>
+            <div class="shizuku"></div>
+        </div>
+        <div class="konva"></div>
     </div>
 
-    <audio autoplay preload="auto">
+    <audio preload="auto">
         <source src="audio/pv1-audio.mp3" type="audio/mpeg">
     </audio>
     <audio class="vocal" preload="auto">
         <source src="audio/pv1-vocal.mp3" type="audio/mpeg">
     </audio>
 
+    <script type="text/javascript" src="bezier.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="config.js"></script>
 
     <!-- Statistics -->
     <iframe class="iframe" src="https://meonc.studio/mahouka?wallpaper=mahouka-yuutousei"
